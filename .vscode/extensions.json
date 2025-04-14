@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "streetsidesoftware.code-spell-checker",
+    "astro-build.astro-vscode",
+    "redhat.vscode-yaml",
+    "bradlc.vscode-tailwindcss",
+    "unifiedjs.vscode-mdx",
+    "adam-bender.commit-message-editor"
+  ]
+}

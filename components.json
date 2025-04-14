@@ -1,0 +1,18 @@
+{
+  "style": "new-york",
+  "rsc": false,
+  "tsx": true,
+  "tailwind": {
+    "config": "tailwind.config.ts",
+    "css": "src/styles/base.css",
+    "baseColor": "gray",
+    "cssVariables": true,
+    "prefix": "tw-"
+  },
+  "aliases": {
+    "components": "@/elements/shad/components",
+    "ui": "@/elements/shad/ui",
+    "lib": "@/app/shad/lib",
+    "utils": "@/utils"
+  }
+}
