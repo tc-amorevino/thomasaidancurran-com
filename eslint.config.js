@@ -82,4 +82,10 @@ export default typescriptEslint.config(
     files: ['**/*.mdx'],
     ...mdx.flat,
   },
+
+  // Astro config
+  {
+    files: ['**/*.astro'],
+    ...astro.configs.recommended,
+  },
 );

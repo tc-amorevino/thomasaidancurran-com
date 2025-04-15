@@ -1,55 +1,73 @@
 import typography from '@tailwindcss/typography';
 import type { Config } from 'tailwindcss';
 import tailwindAnimate from 'tailwindcss-animate';
-import colors from 'tailwindcss/colors';
-import { hexToRgb } from './src/utils/colors';
+import { fontFamily } from 'tailwindcss/defaultTheme';
+
+const customColor = {
+  orbit: {
+    50: '#E5E8F5',
+    100: '#CFD4ED',
+    200: '#9EA9DB',
+    300: '#6A7AC8',
+    400: '#4153AF',
+    500: '#2F3C7E',
+    600: '#253064',
+    700: '#1C234A',
+    800: '#131934',
+    900: '#0A0C1A',
+    950: '#04050B',
+  },
+};
 
 export default {
   content: ['./src/**/*.{astro,html,js,ts,jsx,tsx,md,mdx}'],
-  darkMode: 'class',
+  darkMode: ['class'],
   theme: {
     extend: {
-      typography: {
-        DEFAULT: {
-          css: {
-            '--tw-prose-body': colors.rose[800],
-            '--tw-prose-headings': colors.rose[900],
-            '--tw-prose-lead': colors.rose[600],
-            '--tw-prose-links': colors.rose[900],
-            '--tw-prose-bold': colors.rose[900],
-            '--tw-prose-counters': colors.rose[500],
-            '--tw-prose-bullets': colors.rose[300],
-            '--tw-prose-hr': colors.rose[200],
-            '--tw-prose-quotes': colors.rose[900],
-            '--tw-prose-quote-borders': colors.rose[200],
-            '--tw-prose-captions': colors.rose[500],
-            '--tw-prose-kbd': colors.rose[900],
-            '--tw-prose-kbd-shadows': hexToRgb(colors.rose[900]),
-            '--tw-prose-code': colors.rose[900],
-            '--tw-prose-pre-code': colors.rose[200],
-            '--tw-prose-pre-bg': colors.rose[800],
-            '--tw-prose-th-borders': colors.rose[300],
-            '--tw-prose-td-borders': colors.rose[200],
-            '--tw-prose-invert-body': colors.rose[300],
-            '--tw-prose-invert-headings': colors.white,
-            '--tw-prose-invert-lead': colors.rose[400],
-            '--tw-prose-invert-links': colors.white,
-            '--tw-prose-invert-bold': colors.white,
-            '--tw-prose-invert-counters': colors.rose[400],
-            '--tw-prose-invert-bullets': colors.rose[600],
-            '--tw-prose-invert-hr': colors.rose[700],
-            '--tw-prose-invert-quotes': colors.rose[100],
-            '--tw-prose-invert-quote-borders': colors.rose[700],
-            '--tw-prose-invert-captions': colors.rose[400],
-            '--tw-prose-invert-kbd': colors.white,
-            '--tw-prose-invert-kbd-shadows': hexToRgb(colors.white),
-            '--tw-prose-invert-code': colors.white,
-            '--tw-prose-invert-pre-code': colors.rose[300],
-            '--tw-prose-invert-pre-bg': 'rgb(0 0 0 / 50%)',
-            '--tw-prose-invert-th-borders': colors.rose[600],
-            '--tw-prose-invert-td-borders': colors.rose[700],
-          },
+      fontFamily: {
+        sans: ['Share', 'sans-serif', ...fontFamily.sans],
+        mono: ['ShareTechMono', 'monospace', ...fontFamily.mono],
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      colors: {
+        customColor,
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
         },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
       },
     },
   },
