@@ -2,58 +2,108 @@
 
 @layer base {
   :root {
-    --background: 230 46% 98%;
-    --foreground: 230 46% 10%;
-    --card: 230 46% 100%;
-    --card-foreground: 230 46% 10%;
-    --popover: 230 46% 100%;
-    --popover-foreground: 230 46% 10%;
-    --primary: 230 46% 34%;
-    --primary-foreground: 230 46% 98%;
-    --secondary: 260 46% 80%;
-    --secondary-foreground: 260 46% 10%;
-    --muted: 230 23% 90%;
-    --muted-foreground: 230 46% 40%;
-    --accent: 290 46% 60%;
-    --accent-foreground: 290 46% 98%;
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 0 100% 98%;
-    --border: 230 46% 85%;
-    --input: 230 46% 85%;
-    --ring: 230 46% 34%;
+    /** Shadcn Color Variables */
+    --background: 72 50% 96%; /* #F8FAF0 */
+    --foreground: 100 12% 10%; /* #191D17 */
+    --card: 83 19% 87%; /* #DFE4D7 */
+    --card-foreground: 93 7% 26%; /* #43483F */
+    --popover: 96 38% 85%; /* #D7E8CC */
+    --popover-foreground: 106 38% 9%; /* #121F0E */
+    --primary: 105 33% 31%; /* #416834 */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+    --secondary: 100 12% 34%; /* #54624D */
+    --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+    --muted: 102 67% 81%; /* #C2EFAE */
+    --muted-foreground: 115 100% 6%; /* #032100 */
+    --accent: 36 76% 29%; /* #815512 */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF */
+    --destructive: 0 100% 30%; /* #BA1A1A */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+    --border: 94 5% 45%; /* #73796E */
+    --input: 85 10% 76%; /* #C3C8BC */
+    --ring: 34 88% 70%; /* #F6BC70 */
+
+    --c-background: hsl(var(--background));
+    --c-foreground: hsl(var(--foreground));
+    --c-card: hsl(var(--card));
+    --c-card-foreground: hsl(var(--card-foreground));
+    --c-popover: hsl(var(--popover));
+    --c-popover-foreground: hsl(var(--popover-foreground));
+    --c-primary: hsl(var(--primary));
+    --c-primary-foreground: hsl(var(--primary-foreground));
+    --c-secondary: hsl(var(--secondary));
+    --c-secondary-foreground: hsl(var(--secondary-foreground));
+    --c-muted: hsl(var(--muted));
+    --c-muted-foreground: hsl(var(--muted-foreground));
+    --c-accent: hsl(var(--accent));
+    --c-accent-foreground: hsl(var(--accent-foreground));
+    --c-destructive: hsl(var(--destructive));
+    --c-destructive-foreground: hsl(var(--destructive-foreground));
+    --c-border: hsl(var(--border));
+    --c-input: hsl(var(--input));
+    --c-ring: hsl(var(--ring));
+
     --radius: 0.25rem;
   }
   @font-face {
-    font-family: 'Share';
-    src: url('/fonts/Share-Regular.woff2') format('woff2');
+    font-family: 'NotoSans';
+    src: url('/fonts/NotoSans-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
   }
   @font-face {
-    font-family: 'Share';
-    src: url('/fonts/Share-Bold.woff2') format('woff2');
+    font-family: 'NotoSans';
+    src: url('/fonts/NotoSans-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
   }
   @font-face {
-    font-family: 'Share';
-    src: url('/fonts/Share-BoldItalic.woff2') format('woff2');
+    font-family: 'NotoSans';
+    src: url('/fonts/NotoSans-BoldItalic.woff2') format('woff2');
     font-weight: bold;
     font-style: italic;
     font-display: swap;
   }
   @font-face {
-    font-family: 'Share';
-    src: url('/fonts/Share-Italic.woff2') format('woff2');
+    font-family: 'NotoSans';
+    src: url('/fonts/NotoSans-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'NotoSans';
+    src: url('/fonts/NotoSans-SemiBoldItalic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'NotoSans';
+    src: url('/fonts/NotoSans-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'NotoSans';
+    src: url('/fonts/NotoSans-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'NotoSans';
+    src: url('/fonts/NotoSans-Italic.woff2') format('woff2');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
   }
   @font-face {
-    font-family: 'ShareTechMono';
-    src: url('/fonts/ShareTechMono-Regular.woff2') format('woff2');
+    font-family: 'NotoSansMono';
+    src: url('/fonts/NotoSansMono-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -63,6 +113,24 @@
   }
   body {
     @apply bg-background text-foreground;
+    @apply selection:bg-muted selection:text-muted-foreground;
+  }
+
+  /* Custom canvas style */
+  .canvas-outer {
+    @apply px-2;
+  }
+  .canvas-inner {
+    @apply mx-auto w-full max-w-screen-md;
+  }
+
+  /* Custom backgrounds */
+  .bg-stripes-diagonal {
+    @apply bg-[image:repeating-linear-gradient(315deg,_hsl(_var(--border))_0,_hsl(_var(--border))_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px];
+  }
+
+  .bg-dotted {
+    @apply [background-image:radial-gradient(hsl(_var(--border)/30%)_1px,transparent_1px)] [background-size:16px_16px];
   }
 
   /* Custom styles for prose elements */
@@ -93,7 +161,7 @@
   .post > table {
     @apply my-6;
     tr {
-      @apply even:bg-muted m-0 border-t p-0;
+      @apply m-0 border-t p-0 even:bg-muted;
     }
     th {
       @apply border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right;
@@ -109,7 +177,7 @@
     @apply my-6 ml-6 list-decimal [&>li]:mt-2 [&>li]:marker:font-semibold;
   }
   .post > code {
-    @apply bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
   }
   .post > small {
     @apply text-sm font-medium leading-none;
@@ -118,6 +186,3 @@
 
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-}
