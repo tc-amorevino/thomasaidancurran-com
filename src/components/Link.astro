@@ -1,0 +1,31 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { validateHref, getSiteUrl, getDomain } from '@/lib/utils';
+
+interface Props extends HTMLAttributes<'a'> {
+  href: string;
+  class?: string;
+  classExternal?: string;
+}
+
+const defaultClass = 'underline text-primary';
+const defaultClassExternal = 'underline text-primary text-xs';
+
+const {
+  class: className = defaultClass,
+  classExternal = defaultClassExternal,
+  href,
+  ...attrs
+} = Astro.props;
+
+const hrefUrl = validateHref(href);
+const hrefDomain = getDomain(hrefUrl);
+
+const rootDomain = getDomain(getSiteUrl(Astro.site));
+const isExternal = hrefDomain !== rootDomain;
+---
+
+<a href={hrefUrl} {...attrs} class={className}>
+  <slot />
+  {isExternal && <span class={classExternal}>[↗ {hrefDomain}]</span>}
+</a>

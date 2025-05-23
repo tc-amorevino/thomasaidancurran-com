@@ -1,0 +1,76 @@
+---
+import Link from '@/components/Link.astro';
+import { footerLinksSite, footerLinksSocial } from '@/cms/link-lists.ts';
+import { makeUrl, getSiteUrl } from '@/lib/utils';
+
+const currentYear = new Date().getFullYear();
+const root = getSiteUrl(Astro.site);
+---
+
+<div class="canvas-outer bg-secondary">
+  <div class="canvas-inner h-8 border-x"></div>
+</div>
+<footer class="canvas-outer border-t bg-secondary">
+  <div class="canvas-inner border-x">
+    <div class="bg-stripes-diagonal flex justify-center gap-2 px-[3px] py-4">
+      <div class="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
+        <div class="flex flex-col gap-1">
+          <div class="bg-secondary px-3 py-2">
+            <h4 class="text-sm font-semibold text-secondary-foreground">
+              Site
+            </h4>
+          </div>
+          <div class="grow bg-secondary px-3 py-2">
+            <ul class="flex flex-col gap-2">
+              {
+                footerLinksSite.map((link) => (
+                  <li>
+                    <Link
+                      href={makeUrl(root, link.href)}
+                      class="text-sm text-secondary-foreground underline underline-offset-4">
+                      {link.title}
+                    </Link>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="bg-secondary px-3 py-2">
+            <h4 class="text-sm font-semibold text-secondary-foreground">
+              Social
+            </h4>
+          </div>
+          <div class="grow bg-secondary px-3 py-2">
+            <ul class="flex flex-col gap-2">
+              {
+                footerLinksSocial.map((link) => (
+                  <li>
+                    <Link
+                      href={makeUrl(root, link.href)}
+                      target={'_blank'}
+                      rel="noopener"
+                      title={`Connect with Thomas Aidan Curran on ${link.title}`}
+                      class="text-sm text-secondary-foreground underline underline-offset-4"
+                      classExternal="text-xs text-secondary-foreground/80">
+                      {link.title}
+                    </Link>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="canvas-outer border-t bg-secondary">
+  <div class="canvas-inner border-x px-[15px] py-4">
+    <span class="text-xs text-secondary-foreground/80"
+      >Copyright &copy; {currentYear} Thomas Aidan Curran</span
+    >
+  </div>
+</div>
