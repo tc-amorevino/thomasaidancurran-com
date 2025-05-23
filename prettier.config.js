@@ -3,16 +3,16 @@
  * @type {import("prettier").Config}
  */
 const config = {
-  plugins: [
-    'prettier-plugin-tailwindcss',
-    'prettier-plugin-astro',
-  ],
+  plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
+  tailwindConfig: './tailwind.config.ts',
+  tailwindFunctions: ['clsx', 'classnames', 'ctl'],
   singleQuote: true,
   semi: true,
   printWidth: 80,
   tabWidth: 2,
   bracketSpacing: true,
   endOfLine: 'lf',
+  bracketSameLine: true,
   overrides: [
     {
       files: ['*.astro'],

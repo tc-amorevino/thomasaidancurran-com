@@ -1,15 +1,25 @@
 {
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "file": ".github/instructions/commit-message.instructions.md"
+    }
+  ],
   "editor.tabSize": 2,
   "editor.rulers": [80],
   "editor.colorDecorators": false,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.documentSelectors": ["**/*.astro"],
   "cSpell.enabledFileTypes": {
     "astro": true,
     "mdx": true
   },
   "cSpell.language": "en",
-  "prettier.documentSelectors": ["**/*.astro"],
   "eslint.validate": [
     "javascript",
     "javascriptreact",

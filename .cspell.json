@@ -6,8 +6,10 @@
   // words - list of words to be always considered correct
   "words": [
     "Aidan",
+    "Noto",
     "shadcn",
-    "thomasaidancurran"
+    "thomasaidancurran",
+    "webp"
   ],
   "flagWords": [],
   "ignorePaths": [

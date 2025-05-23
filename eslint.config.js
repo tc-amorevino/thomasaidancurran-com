@@ -6,20 +6,18 @@ import eslint from '@eslint/js';
 import typescriptEslint from 'typescript-eslint';
 
 // Plugins
-// import prettier from 'eslint-plugin-prettier';
-import prettier from 'eslint-config-prettier/flat';
+import prettier from 'eslint-config-prettier';
 import astro from 'eslint-plugin-astro';
 import tailwindcss from 'eslint-plugin-tailwindcss';
 import jsdoc from 'eslint-plugin-jsdoc';
-import * as mdx from 'eslint-plugin-mdx'; // notes
-import react from 'eslint-plugin-react'; // notes
+import * as mdx from 'eslint-plugin-mdx';
+import react from 'eslint-plugin-react';
 
 export default typescriptEslint.config(
   // Ignores
   {
-    ignores: ['dist', 'node_modules', '.astro', '.github', '.public'],
+    ignores: ['dist', 'node_modules', '.github', '.public'],
   },
-
   // Base config
   // JavaScript config
   eslint.configs.recommended,
@@ -29,26 +27,33 @@ export default typescriptEslint.config(
   prettier,
   // CSS Class config
   ...tailwindcss.configs['flat/recommended'],
-  // Astro Framework config
-  ...astro.configs.recommended,
   {
+    settings: {},
     languageOptions: {
       globals: {
         ...globals.browser,
+        ...globals.node,
       },
       sourceType: 'module',
       ecmaVersion: 'latest',
       parser: typescriptEslint.parser,
       parserOptions: {
-        projectService: true,
+        project: './tsconfig.json',
         tsconfigRootDir: import.meta.dirname,
+        extraFileExtensions: ['.astro'],
       },
     },
+    rules: {
+      'tailwindcss/no-custom-classname': 'off',
+    },
   },
-  // Additional config
+  // Astro Framework config
+  ...astro.configs.recommended,
+
   // TypeScript config
   {
     files: ['**/*.ts', '**/*.tsx'],
+    ignores: ['**/*.mdx/**.ts', '**/*.mdx/**.tsx'],
     ...jsdoc.configs['flat/recommended-typescript'],
   },
 
@@ -79,13 +84,7 @@ export default typescriptEslint.config(
 
   // Markdown config
   {
-    files: ['**/*.mdx'],
+    files: ['**/**.mdx'],
     ...mdx.flat,
-  },
-
-  // Astro config
-  {
-    files: ['**/*.astro'],
-    ...astro.configs.recommended,
   },
 );

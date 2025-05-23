@@ -5,16 +5,17 @@
     "paths": {
       "@/*": ["src/*"]
     },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
     "strictNullChecks": true,
-    "verbatimModuleSyntax": true,
     "checkJs": true,
+    "verbatimModuleSyntax": true,
     "plugins": [
       {
         "name": "@astrojs/ts-plugin"
       }
-    ],
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    ]
   },
-  "exclude": ["node_modules", ".astro", "dist", "public"]
+  "include": ["**/*.astro", ".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"]
 }
