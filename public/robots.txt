@@ -1,2 +1,7 @@
-# Robots.txt for thomasaidancurran.com
+# robots.txt for thomasaidancurran.com
 # Full syntax: https://developers.google.com/search/docs/advanced/robots/create-robots-txt
+
+User-agent: *
+Allow: /
+
+Sitemap: https://thomasaidancurran.com/sitemap-index.xml
