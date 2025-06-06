@@ -12,15 +12,15 @@ const root = getSiteUrl(Astro.site);
 </div>
 <footer class="canvas-outer border-t bg-secondary">
   <div class="canvas-inner border-x">
-    <div class="bg-stripes-diagonal flex justify-center gap-2 px-[3px] py-4">
-      <div class="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
+    <div class="bg-stripes-diagonal flex justify-center gap-2 px-[7px] py-4">
+      <div class="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
         <div class="flex flex-col gap-1">
-          <div class="bg-secondary px-3 py-2">
+          <div class="bg-secondary p-2">
             <h4 class="text-sm font-semibold text-secondary-foreground">
               Site
             </h4>
           </div>
-          <div class="grow bg-secondary px-3 py-2">
+          <div class="grow bg-secondary p-2">
             <ul class="flex flex-col gap-2">
               {
                 footerLinksSite.map((link) => (
@@ -37,12 +37,12 @@ const root = getSiteUrl(Astro.site);
           </div>
         </div>
         <div class="flex flex-col gap-1">
-          <div class="bg-secondary px-3 py-2">
+          <div class="bg-secondary p-2">
             <h4 class="text-sm font-semibold text-secondary-foreground">
               Social
             </h4>
           </div>
-          <div class="grow bg-secondary px-3 py-2">
+          <div class="grow bg-secondary p-2">
             <ul class="flex flex-col gap-2">
               {
                 footerLinksSocial.map((link) => (

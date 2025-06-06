@@ -27,5 +27,7 @@ const isExternal = hrefDomain !== rootDomain;
 
 <a href={hrefUrl} {...attrs} class={className}>
   <slot />
-  {isExternal && <span class={classExternal}>[↗ {hrefDomain}]</span>}
-</a>
+  {
+    isExternal && <span class={classExternal} set:text={`[↗ ${hrefDomain}]`} />
+  }</a
+>

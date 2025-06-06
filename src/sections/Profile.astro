@@ -1,0 +1,100 @@
+---
+import { Picture } from 'astro:assets';
+import profileImage from '@/cms/images/thomas-aidan-curran-profile-picture_800x800.jpg';
+---
+
+<div class="canvas-outer border-t bg-primary/40 py-8">
+  <div class="canvas-inner">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div class="bg-stripes-diagonal flex border py-4">
+        <!-- Column 1 content -->
+        <div class="self-center">
+          <Picture
+            src={profileImage}
+            width={profileImage.width / 2}
+            densities={[2]}
+            formats={['jpg', 'webp']}
+            loading={'eager'}
+            alt="Thomas Aidan Curran Profile Picture"
+          />
+        </div>
+      </div>
+      <div class="border text-sm">
+        <div class="border-b px-4 py-2">
+          <span
+            class="mb-2 block font-mono text-xs tracking-wider text-foreground/80"
+            >Name:</span
+          >
+          <span>Thomas Aidan Curran</span>
+        </div>
+        <div class="border-b px-4 py-2">
+          <span
+            class="mb-2 block font-mono text-xs tracking-wider text-foreground/80"
+            >Locations:</span
+          >
+          <span>New York City, USA; Berlin, Germany</span>
+        </div>
+        <div class="border-b px-4 py-2">
+          <span
+            class="mb-2 block font-mono text-xs tracking-wider text-foreground/80"
+            >Education:</span
+          >
+          <span
+            >The Wharton School of the University of Pennsylvania; BS,
+            Statistics, Decision Science, Computer Science; 1983</span
+          >
+        </div>
+        <div class="border-b px-4 py-2">
+          <span
+            class="mb-2 block font-mono text-xs tracking-wider text-foreground/80"
+            >Occupation:</span
+          >
+          <span>Advisor / Investor / Entrepreneur / Author</span>
+        </div>
+        <div class="px-4 py-2">
+          <span
+            class="mb-2 block font-mono text-xs tracking-wider text-foreground/80"
+            >Career Highlights:</span
+          >
+          <div class="grid grid-cols-2 gap-x-2 gap-y-3">
+            <div class="border-b border-dotted">
+              <strong class="font-semibold">Ory Corp.</strong>
+            </div>
+            <div class="border-b border-dotted">Founder & CEO</div>
+
+            <div class="border-b border-dotted">
+              <strong class="font-semibold">DB1 Ventures</strong>
+            </div>
+            <div class="border-b border-dotted">Managing Director</div>
+
+            <div class="border-b border-dotted">
+              <strong class="font-semibold">Hybris AG</strong>
+            </div>
+            <div class="border-b border-dotted">CTO (Acq. by SAP)</div>
+
+            <div class="border-b border-dotted">
+              <strong class="font-semibold">Deutsche Telekom AG</strong>
+            </div>
+            <div class="border-b border-dotted">CTO P&I</div>
+
+            <div class="border-b border-dotted">
+              <strong class="font-semibold">Microsoft Corporation</strong>
+            </div>
+            <div class="border-b border-dotted">Strategic Advisor</div>
+
+            <div class="border-b border-dotted">
+              <strong class="font-semibold">Bertelsmann AG</strong>
+            </div>
+            <div class="border-b border-dotted">CTO & CIO</div>
+            <div class="border-b border-dotted">
+              <strong class="font-semibold">Component Software Inc.</strong>
+            </div>
+            <div class="border-b border-dotted">
+              Founder & CTO (Acq. by SAP)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

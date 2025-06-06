@@ -1,6 +1,10 @@
 ---
 import LayoutMain from '@/layouts/LayoutMain.astro';
 import Post from '@/sections/Post.astro';
+import * as About from '@/cms/blocks/about.mdx';
+import Profile from '@/sections/Profile.astro';
+
+const Content = About.Content;
 ---
 
 <LayoutMain>
@@ -8,7 +12,13 @@ import Post from '@/sections/Post.astro';
     <div class="canvas-outer border-t">
       <div class="canvas-inner h-8 border-x"></div>
     </div>
-    <Post />
+    <Profile />
+    <div class="canvas-outer border-t">
+      <div class="canvas-inner h-8 border-x"></div>
+    </div>
+    <Post>
+      <Content slot="post" />
+    </Post>
     <div class="canvas-outer border-t">
       <div class="canvas-inner h-8 border-x"></div>
     </div>

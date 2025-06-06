@@ -37,19 +37,23 @@ export const headerLinksNav = [
     href: `/`, // home root
   },
   {
+    title: 'Blog',
+    href: `/blog`,
+  },
+  {
     title: 'Publications',
     href: `/publications`,
   },
-  // {
-  //   title: 'Blog',
-  //   href: `/blog`,
-  // },
-  // {
-  //   title: 'Portfolio',
-  //   href: `/portfolio`,
-  // },
   {
-    title: 'Inquiries',
-    href: `/inquiries`,
+    title: 'Portfolio',
+    href: `/portfolio`,
   },
+  {
+    title: 'Media',
+    href: `/media`,
+  },
+  // {
+  //   title: 'Inquiries',
+  //   href: `/inquiries`,
+  // },
 ];

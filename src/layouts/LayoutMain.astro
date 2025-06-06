@@ -1,6 +1,7 @@
 ---
 import Header from '@/sections/Header.astro';
 import Footer from '@/sections/Footer.astro';
+import { about } from '@/cms/json-ld';
 import '@/styles/base.css';
 
 /**
@@ -11,7 +12,7 @@ import '@/styles/base.css';
 ---
 
 <!doctype html>
-<html>
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
 
@@ -25,6 +26,14 @@ import '@/styles/base.css';
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
     <link rel="shortcut icon" href="/favicon/favicon.ico" />
     <!-- Site Icons: End -->
+
+    <!-- Site JSON LD: Start -->
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(about)}
+    />
+    <!-- Site JSON LD: End -->
 
     <meta name="viewport" content="width=device-width" />
     <slot name="head" />
