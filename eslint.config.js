@@ -1,34 +1,63 @@
 // @ts-check
 
-// Globals
-import globals from 'globals';
-import eslint from '@eslint/js';
-import typescriptEslint from 'typescript-eslint';
-
 // Plugins
-import prettier from 'eslint-config-prettier';
+import eslint from '@eslint/js';
 import astro from 'eslint-plugin-astro';
-import tailwindcss from 'eslint-plugin-tailwindcss';
 import jsdoc from 'eslint-plugin-jsdoc';
 import * as mdx from 'eslint-plugin-mdx';
-import react from 'eslint-plugin-react';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import tailwindcss from 'eslint-plugin-tailwindcss';
+import globals from 'globals';
+import typescriptEslint from 'typescript-eslint';
 
+// export default typescriptEslint.config(
 export default typescriptEslint.config(
   // Ignores
   {
-    ignores: ['dist', 'node_modules', '.github', '.public'],
+    ignores: [
+      'dist/',
+      '.astro/',
+      '**/**/node_modules',
+      '**/.github',
+      '**/*.mdx/**.ts', // remove maybe
+    ],
   },
-  // Base config
   // JavaScript config
-  eslint.configs.recommended,
-  // TypeScript config
-  ...typescriptEslint.configs.recommendedTypeChecked,
-  // Style config
-  prettier,
-  // CSS Class config
-  ...tailwindcss.configs['flat/recommended'],
   {
-    settings: {},
+    files: ['**/*.{js}'], //
+    extends: [eslint.configs.recommended],
+  },
+
+  // TypeScript config
+  {
+    files: ['**/*.{ts}'],
+    extends: [typescriptEslint.configs.recommended],
+  },
+
+  // typescriptEslint.configs.eslintRecommended,
+
+  // Code Style config
+  {
+    extends: [tailwindcss.configs['flat/recommended']],
+    plugins: {
+      'simple-import-sort': simpleImportSort,
+    },
+    rules: {
+      'simple-import-sort/imports': 'error',
+      'tailwindcss/no-custom-classname': 'off',
+      'simple-import-sort/exports': 'error',
+    },
+  },
+
+  // JSDoc config
+  {
+    files: ['**/*.{js,ts}'],
+    extends: [jsdoc.configs['flat/recommended-typescript-error']],
+  },
+
+  // Javascript / Typescript Custom config
+  {
+    files: ['**/*.{js,ts}'],
     languageOptions: {
       globals: {
         ...globals.browser,
@@ -38,26 +67,13 @@ export default typescriptEslint.config(
       ecmaVersion: 'latest',
       parser: typescriptEslint.parser,
       parserOptions: {
-        project: './tsconfig.json',
+        project: ['./tsconfig.json'],
         tsconfigRootDir: import.meta.dirname,
-        extraFileExtensions: ['.astro'],
       },
     },
-    rules: {
-      'tailwindcss/no-custom-classname': 'off',
-    },
-  },
-  // Astro Framework config
-  ...astro.configs.recommended,
-
-  // TypeScript config
-  {
-    files: ['**/*.ts', '**/*.tsx'],
-    ignores: ['**/*.mdx/**.ts', '**/*.mdx/**.tsx'],
-    ...jsdoc.configs['flat/recommended-typescript'],
   },
 
-  // TypeScript Def config
+  // TypeScript Definitions config
   {
     files: ['**/*.d.ts'],
     rules: {
@@ -65,26 +81,22 @@ export default typescriptEslint.config(
     },
   },
 
-  // React config
+  // Astro Framework config
+  ...astro.configs.recommended,
   {
-    files: ['**/*.tsx'],
-    ...react.configs.flat.recommended,
+    files: ['**/*.astro'],
     languageOptions: {
-      ...react.configs.flat.recommended.languageOptions,
-      globals: {
-        ...globals.browser,
-      },
       parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
+        extraFileExtensions: ['.astro'],
+        // project: './tsconfig.json',
+        // sourceType: 'module',
       },
     },
   },
 
   // Markdown config
   {
-    files: ['**/**.mdx'],
-    ...mdx.flat,
+    files: ['**/*.mdx'],
+    extends: [mdx.flat],
   },
 );

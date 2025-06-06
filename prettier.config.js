@@ -1,3 +1,4 @@
+/* eslint-disable jsdoc/check-tag-names */
 /**
  * @see https://prettier.io/docs/en/configuration.html
  * @type {import("prettier").Config}
@@ -18,13 +19,17 @@ const config = {
       files: ['*.astro'],
       options: {
         parser: 'astro',
+        htmlWhitespaceSensitivity: 'strict',
       },
     },
     {
       files: ['**/*.md', '**/*.mdx'],
       options: {
+        printWidth: 120,
         useTabs: false,
         proseWrap: 'always',
+        objectWrap: 'collapse',
+        bracketSameLine: true,
       },
     },
   ],

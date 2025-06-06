@@ -1,5 +1,4 @@
 {
-  "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.chat.codeGeneration.useInstructionFiles": true,
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
@@ -10,9 +9,17 @@
   "editor.rulers": [80],
   "editor.colorDecorators": false,
   "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[mdx]": {
+    "editor.rulers": [120],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "prettier.documentSelectors": ["**/*.astro"],
   "cSpell.enabledFileTypes": {
@@ -28,6 +35,7 @@
     "astro",
     "mdx"
   ],
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "json.schemas": [
     {
       "fileMatch": [".prettierrc", ".prettierrc.json", "prettier.config.json"],

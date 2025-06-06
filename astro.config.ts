@@ -1,6 +1,5 @@
 import tailwind from '@astrojs/tailwind';
 import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
@@ -19,10 +18,5 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'never',
   scopedStyleStrategy: 'class',
-  integrations: [
-    tailwind({ applyBaseStyles: false }),
-    react(),
-    mdx(),
-    sitemap(),
-  ],
+  integrations: [tailwind({ applyBaseStyles: false }), mdx(), sitemap()],
 });

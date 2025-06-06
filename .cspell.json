@@ -6,22 +6,18 @@
   // words - list of words to be always considered correct
   "words": [
     "Aidan",
+    "Boerse",
+    "callees",
     "Noto",
+    "prosumer",
     "shadcn",
     "thomasaidancurran",
     "webp"
   ],
   "flagWords": [],
-  "ignorePaths": [
-    "node_modules/**",
-    "public/robots.txt"
-  ],
+  "ignorePaths": ["node_modules/**", "public/robots.txt"],
   "import": [],
   "useGitignore": true,
   "enabled": true,
-  "enableFiletypes": [
-    "astro",
-    "mdx",
-    "tsx"
-  ]
+  "enableFiletypes": ["astro", "mdx", "tsx"]
 }
