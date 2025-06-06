@@ -10,6 +10,11 @@
 
 Website: [thomasaidancurran.com](https://thomasaidancurran.com)
 
+## To Dos
+
+- [ ] Add github actions (link check, lighthouse, prettier, eslint)
+- [ ] Google Search Console
+
 ## Installation
 
 ## Runtime
