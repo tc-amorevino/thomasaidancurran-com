@@ -1,10 +1,5 @@
 {
-  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
-  "github.copilot.chat.commitMessageGeneration.instructions": [
-    {
-      "file": ".github/instructions/commit-message.instructions.md"
-    }
-  ],
+  // Editor settings
   "editor.tabSize": 2,
   "editor.rulers": [80],
   "editor.colorDecorators": false,
@@ -12,21 +7,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[mdx]": {
-    "editor.rulers": [120],
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
-  "prettier.documentSelectors": ["**/*.astro"],
-  "cSpell.enabledFileTypes": {
-    "astro": true,
-    "mdx": true
-  },
-  "cSpell.language": "en",
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -35,7 +15,38 @@
     "astro",
     "mdx"
   ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[mdx][markdown]": {
+    "editor.rulers": [120],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "cSpell.enabledFileTypes": {
+    "astro": true,
+    "mdx": true
+  },
+  "cSpell.language": "en",
   "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // File Associations
+  "files.associations": {
+    "**/.github/**/*.instructions.md": "markdown",
+    "tsconfig.json": "jsonc",
+    "**/src/**/*.css": "tailwindcss"
+  },
+
+  // Copilot Assistant
+  // "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "file": "/.github/instructions/commit-message.instructions.md"
+    }
+  ],
+
+  // JSON Schemas
   "json.schemas": [
     {
       "fileMatch": [".prettierrc", ".prettierrc.json", "prettier.config.json"],
@@ -54,13 +65,11 @@
       "url": "https://ui.shadcn.com/schema.json"
     }
   ],
-  "files.associations": {
-    "tsconfig.json": "jsonc",
-    "**/src/**/*.css": "tailwindcss"
-  },
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow.json": "/.github/workflows/*.yml"
   },
+
+  // Commit Messages
   "commit-message-editor.staticTemplate": [
     "feat: Short description",
     "",
