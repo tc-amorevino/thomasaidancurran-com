@@ -8,16 +8,26 @@
     "Aidan",
     "Boerse",
     "callees",
+    "IPTV",
+    "Middelhoff",
     "Noto",
     "prosumer",
+    "reengineering",
     "shadcn",
     "thomasaidancurran",
     "webp"
   ],
   "flagWords": [],
-  "ignorePaths": ["node_modules/**", "public/robots.txt"],
+  "ignorePaths": [
+    "node_modules/**",
+    "public/robots.txt"
+  ],
   "import": [],
   "useGitignore": true,
   "enabled": true,
-  "enableFiletypes": ["astro", "mdx", "tsx"]
+  "enableFiletypes": [
+    "astro",
+    "mdx",
+    "tsx"
+  ]
 }
