@@ -19,7 +19,6 @@ const config = {
       files: ['*.astro'],
       options: {
         parser: 'astro',
-        htmlWhitespaceSensitivity: 'strict',
       },
     },
     {
@@ -30,6 +29,7 @@ const config = {
         proseWrap: 'always',
         objectWrap: 'collapse',
         bracketSameLine: true,
+        htmlWhitespaceSensitivity: 'strict',
       },
     },
   ],
