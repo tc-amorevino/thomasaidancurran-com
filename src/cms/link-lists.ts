@@ -36,10 +36,10 @@ export const headerLinksNav = [
     title: 'About',
     href: `/`, // home root
   },
-  {
-    title: 'Blog',
-    href: `/blog`,
-  },
+  // {
+  //   title: 'Blog',
+  //   href: `/blog`,
+  // },
   {
     title: 'Publications',
     href: `/publications`,
@@ -48,10 +48,10 @@ export const headerLinksNav = [
     title: 'Portfolio',
     href: `/portfolio`,
   },
-  {
-    title: 'Media',
-    href: `/media`,
-  },
+  // {
+  //   title: 'Media',
+  //   href: `/media`,
+  // },
   // {
   //   title: 'Inquiries',
   //   href: `/inquiries`,
