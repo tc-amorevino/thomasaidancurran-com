@@ -1,9 +1,10 @@
 ---
-import { cn, makeUrl, getSiteUrl } from '@/lib/utils';
-import Logo from '@/components/Logo.astro';
-import Link from '@/components/Link.astro';
-import { headerLinksNav } from '@/cms/link-lists';
 import '@/styles/custom-utils.css';
+
+import { headerLinksNav } from '@/cms/link-lists';
+import Link from '@/components/Link.astro';
+import Logo from '@/components/Logo.astro';
+import { cn, getSiteUrl, makeUrl } from '@/lib/utils';
 
 const root = getSiteUrl(Astro.site);
 const isActive = (link: (typeof headerLinksNav)[number]) => {

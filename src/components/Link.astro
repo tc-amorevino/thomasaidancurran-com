@@ -1,6 +1,7 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import { validateHref, getSiteUrl, getDomain } from '@/lib/utils';
+
+import { getDomain, getSiteUrl, validateHref } from '@/lib/utils';
 
 interface Props extends HTMLAttributes<'a'> {
   href: string;
@@ -25,9 +26,10 @@ const rootDomain = getDomain(getSiteUrl(Astro.site));
 const isExternal = hrefDomain !== rootDomain;
 ---
 
-<a href={hrefUrl} {...attrs} class={className}>
-  <slot />
-  {
-    isExternal && <span class={classExternal} set:text={`[↗ ${hrefDomain}]`} />
+<a href={hrefUrl} {...attrs} class={className}
+  ><slot />{
+    isExternal && (
+      <span class={classExternal} set:text={` [↗ ${hrefDomain}]`} />
+    )
   }</a
 >
