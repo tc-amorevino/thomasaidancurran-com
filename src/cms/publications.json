@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "sap-r-3-business-blueprint-understanding-the-business-process-reference-model",
+    "title": "SAP R/3 Business Blueprint: Understanding the Business Process Reference Model",
+    "image": "src/cms/images/sap-r-3-business-blueprint-understanding-the-business-process-reference-model_356x475.jpg",
+    "href": "https://www.amazon.com/s?k=978-0135211472",
+    "year": 1997,
+    "type": "book"
+  },
+  {
+    "slug": "sap-r-3-business-blueprint-understanding-enterprise-supply-chain-management",
+    "title": "SAP R/3 Business Blueprint: Understanding Enterprise Supply Chain Management",
+    "image": "src/cms/images/sap-r-3-business-blueprint-understanding-enterprise-supply-chain-management_1127x1500.jpg",
+    "href": "https://www.amazon.com/s?k=978-0130853400",
+    "year": 1999,
+    "type": "book"
+  },
+  {
+    "slug": "sap-r-3-reporting-ebusiness-intelligence",
+    "title": "SAP R/3 Reporting & eBusiness Intelligence",
+    "image": "src/cms/images/sap-r-3-reporting-ebusiness-intelligence_356x475.jpg",
+    "href": "https://www.amazon.com/s?k=978-0130226150",
+    "year": 2000,
+    "type": "book"
+  }
+]

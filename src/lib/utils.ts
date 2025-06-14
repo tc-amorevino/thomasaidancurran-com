@@ -1,6 +1,6 @@
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
 import { z } from 'astro:schema';
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 /**
  * This function combines the clsx and tailwind-merge libraries to create a
@@ -73,4 +73,49 @@ export function makeUrl(root: URL, path: string) {
   const rootValid = validateHref(root.href);
   const newUrl = new URL(path, rootValid);
   return newUrl.href;
+}
+
+/**
+ * This function validates SEO-related data structures using the zod library.
+ * It checks the page title, description, robots directives, and canonical URL.
+ * @returns An object containing the validated SEO data or throws an error if
+ * validation fails.
+ */
+const _seoValidate = z.object({
+  /** The title of the current page that appears in the browser tab and search results, max. 60 characters */
+  page_title: z
+    .string()
+    .min(1, 'Page title is required')
+    .max(60, 'The page title cannot exceed 60 characters'),
+  /** The description of the current page that appears in search results, max. 160 characters */
+  page_description: z
+    .string()
+    .min(1, 'Page description is required')
+    .max(160, 'The page description cannot exceed 160 characters'),
+  /** Whether the page should be omitted from search engine indexing */
+  robots_noindex: z.boolean().default(false).optional(),
+  /** Whether links on the page should not be followed by search engine crawlers */
+  robots_nofollow: z.boolean().default(false).optional(),
+  /** The canonical URL of the page, _no trailing slash_ */
+  canonical_url: z.string().url().min(1, 'Canonical URL is required'),
+});
+
+/** The SEO validation schema */
+export type SeoValidate = z.infer<typeof _seoValidate>;
+
+/**
+ * This function validates SEO data against a predefined schema using zod.
+ * If the data is valid, it returns the validated data; otherwise, it throws an
+ * error with a message detailing the validation issues.
+ * @param data The data to be validated against the SEO schema.
+ * @returns The validated SEO data.
+ * @throws An error if the data does not conform to the SEO schema.
+ */
+export function seoValidation(data: unknown): SeoValidate {
+  const result = _seoValidate.safeParse(data);
+  if (!result.success) {
+    const errors = result.error.errors.map((e) => e.message).join(', ');
+    throw new Error(`${errors}`);
+  }
+  return result.data;
 }

@@ -15,7 +15,8 @@ export const footerLinksSite = [
     title: 'ai.txt',
     href: `/ai.txt`,
   },
-];
+] as const;
+
 export const footerLinksSocial = [
   {
     title: 'GitHub',
@@ -29,7 +30,7 @@ export const footerLinksSocial = [
     title: 'X',
     href: 'https://x.com/tacurran',
   },
-];
+] as const;
 
 export const headerLinksNav = [
   {
@@ -52,8 +53,4 @@ export const headerLinksNav = [
   //   title: 'Media',
   //   href: `/media`,
   // },
-  // {
-  //   title: 'Inquiries',
-  //   href: `/inquiries`,
-  // },
-];
+] as const;

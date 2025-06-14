@@ -1,6 +1,7 @@
 ---
-import { cn, getSiteUrl } from '@/lib/utils';
 import type { HTMLAttributes } from 'astro/types';
+
+import { cn, getSiteUrl } from '@/lib/utils';
 
 interface Props extends Omit<HTMLAttributes<'a'>, 'href' | 'title'> {
   class?: string;

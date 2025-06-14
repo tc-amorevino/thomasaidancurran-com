@@ -13,7 +13,8 @@ const { class: className = defaultClass, ...attrs } = Astro.props;
   <div class="canvas-outer flex grow flex-col border-t">
     <div class="canvas-inner flex grow flex-col border-x bg-card p-[3px]">
       <div class="grow rounded-xl border bg-white px-[11px] py-10">
-        <article class="prose prose-neutral max-w-none">
+        <article
+          class="prose prose-neutral max-w-none prose-headings:scroll-mt-32">
           <slot name="post">
             <h1>At vero eos et accusam</h1>
             <p>
