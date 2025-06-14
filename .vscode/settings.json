@@ -1,4 +1,7 @@
 {
+  // Astro Settings
+  "astro.content-intellisense": true,
+
   // Editor settings
   "editor.tabSize": 2,
   "editor.rulers": [80],
@@ -48,6 +51,11 @@
 
   // JSON Schemas
   "json.schemas": [
+    // Astro content colleciton specific
+    {
+      "fileMatch": ["src/cms/publications.json"],
+      "url": "./src/.json-schemas/publications-schema.json"
+    },
     {
       "fileMatch": [".prettierrc", ".prettierrc.json", "prettier.config.json"],
       "url": "https://json.schemastore.org/prettierrc"

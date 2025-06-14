@@ -1,7 +1,11 @@
 // @ts-check
 
+// Sample
+// https://github.com/withastro/docs/blob/main/eslint.config.mjs
+
 // Plugins
 import eslint from '@eslint/js';
+import astroParser from 'astro-eslint-parser';
 import astro from 'eslint-plugin-astro';
 import jsdoc from 'eslint-plugin-jsdoc';
 import * as mdx from 'eslint-plugin-mdx';
@@ -22,19 +26,15 @@ export default typescriptEslint.config(
       '**/*.mdx/**.ts', // remove maybe
     ],
   },
-  // JavaScript config
+  // JavaScript/ TypeScript config
   {
-    files: ['**/*.{js}'], //
-    extends: [eslint.configs.recommended],
+    files: ['**/*.{js,ts}'], //
+    extends: [
+      eslint.configs.recommended,
+      typescriptEslint.configs.recommendedTypeChecked,
+      typescriptEslint.configs.eslintRecommended,
+    ],
   },
-
-  // TypeScript config
-  {
-    files: ['**/*.{ts}'],
-    extends: [typescriptEslint.configs.recommended],
-  },
-
-  // typescriptEslint.configs.eslintRecommended,
 
   // Code Style config
   {
@@ -82,14 +82,20 @@ export default typescriptEslint.config(
   },
 
   // Astro Framework config
-  ...astro.configs.recommended,
   {
     files: ['**/*.astro'],
+    extends: [
+      eslint.configs.recommended,
+      typescriptEslint.configs.recommendedTypeChecked,
+      astro.configs.recommended,
+      typescriptEslint.configs.eslintRecommended,
+    ],
     languageOptions: {
+      parser: astroParser,
       parserOptions: {
+        parser: typescriptEslint.parser,
         extraFileExtensions: ['.astro'],
-        // project: './tsconfig.json',
-        // sourceType: 'module',
+        project: ['./tsconfig.json'],
       },
     },
   },
