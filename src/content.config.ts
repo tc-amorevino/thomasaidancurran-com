@@ -40,7 +40,34 @@ const publications = defineCollection({
     ),
 });
 
-export const collections = { blog, publications };
+/** The schema for portfolio items */
+const portfolioSchema = z.object({
+  /** Unique identifier for the portfolio item */
+  slug: z.string().min(1, 'ID cannot be empty'),
+  /** Title of the portfolio item */
+  title: z.string().min(1, 'Title cannot be empty'),
+  /** Description of the portfolio item */
+  description: z.string().optional(),
+  /** Image reference for the portfolio item, 'src/cms/images/...' */
+  image: z.string().optional(),
+  /** Link to the portfolio item */
+  href: z.string().url(),
+  /** Type of portfolio item */
+  type: z.enum(['advisor', 'angel investor', 'founder']),
+});
+
+const portfolio = defineCollection({
+  loader: file('src/cms/portfolio.json'),
+  schema: ({ image }) =>
+    portfolioSchema.merge(
+      z.object({
+        image: image().optional(),
+      }),
+    ),
+});
+
+export const collections = { blog, publications, portfolio };
 
 // Create a json schema for the collection, runs with 'npx astro sync'
 generateJsonSchema(publicationsSchema.array(), 'publications-schema.json');
+generateJsonSchema(portfolioSchema.array(), 'portfolio-schema.json');
