@@ -37,6 +37,7 @@
   // File Associations
   "files.associations": {
     "**/.github/**/*.instructions.md": "markdown",
+    "**/.github/**/*.md": "markdown",
     "tsconfig.json": "jsonc",
     "**/src/**/*.css": "tailwindcss"
   },
@@ -56,6 +57,11 @@
       "fileMatch": ["src/cms/publications.json"],
       "url": "./src/.json-schemas/publications-schema.json"
     },
+    {
+      "fileMatch": ["src/cms/portfolio.json"],
+      "url": "./src/.json-schemas/portfolio-schema.json"
+    },
+    // Project specific
     {
       "fileMatch": [".prettierrc", ".prettierrc.json", "prettier.config.json"],
       "url": "https://json.schemastore.org/prettierrc"

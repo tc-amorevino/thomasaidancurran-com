@@ -1,7 +1,7 @@
-import type { Config } from 'tailwindcss';
-import tailwindAnimate from 'tailwindcss-animate';
-import { fontFamily } from 'tailwindcss/defaultTheme';
 import typography from '@tailwindcss/typography';
+import type { Config } from 'tailwindcss';
+import { fontFamily } from 'tailwindcss/defaultTheme';
+import tailwindAnimate from 'tailwindcss-animate';
 
 export default {
   content: ['./src/**/*.{astro,html,js,ts,jsx,tsx,md,mdx}'],
