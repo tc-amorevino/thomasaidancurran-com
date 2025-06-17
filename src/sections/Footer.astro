@@ -1,7 +1,7 @@
 ---
-import Link from '@/components/Link.astro';
 import { footerLinksSite, footerLinksSocial } from '@/cms/link-lists.ts';
-import { makeUrl, getSiteUrl } from '@/lib/utils';
+import Link from '@/components/Link.astro';
+import { getSiteUrl, makeUrl } from '@/lib/utils';
 
 const currentYear = new Date().getFullYear();
 const root = getSiteUrl(Astro.site);
