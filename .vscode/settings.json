@@ -1,0 +1,194 @@
+{
+  // Astro Settings
+  "astro.content-intellisense": true,
+
+  // Editor settings
+  "editor.tabSize": 2,
+  "editor.rulers": [80],
+  "editor.colorDecorators": false,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "astro",
+    "mdx"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[mdx][markdown]": {
+    "editor.rulers": [120],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "cSpell.enabledFileTypes": {
+    "astro": true,
+    "mdx": true
+  },
+  "cSpell.language": "en",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // File Associations
+  "files.associations": {
+    "**/.github/**/*.instructions.md": "markdown",
+    "**/.github/**/*.md": "markdown",
+    "tsconfig.json": "jsonc",
+    "**/src/**/*.css": "tailwindcss"
+  },
+
+  // Copilot Assistant
+  // "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "file": "/.github/instructions/commit-message.instructions.md"
+    }
+  ],
+
+  // JSON Schemas
+  "json.schemas": [
+    // Astro content colleciton specific
+    {
+      "fileMatch": ["src/cms/publications.json"],
+      "url": "./src/.json-schemas/publications-schema.json"
+    },
+    {
+      "fileMatch": ["src/cms/portfolio.json"],
+      "url": "./src/.json-schemas/portfolio-schema.json"
+    },
+    // Project specific
+    {
+      "fileMatch": [".prettierrc", ".prettierrc.json", "prettier.config.json"],
+      "url": "https://json.schemastore.org/prettierrc"
+    },
+    {
+      "fileMatch": ["tsconfig.json"],
+      "url": "https://json.schemastore.org/tsconfig"
+    },
+    {
+      "fileMatch": ["package.json"],
+      "url": "https://json.schemastore.org/package"
+    },
+    {
+      "fileMatch": ["components.json"],
+      "url": "https://ui.shadcn.com/schema.json"
+    }
+  ],
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "/.github/workflows/*.yml"
+  },
+
+  // Commit Messages
+  "commit-message-editor.staticTemplate": [
+    "feat: Short description",
+    "",
+    "Message body",
+    "",
+    "Message footer"
+  ],
+  "commit-message-editor.dynamicTemplate": [
+    "{type}{scope}{breaking_change}: {description}",
+    "",
+    "{body}"
+  ],
+  "commit-message-editor.tokens": [
+    {
+      "label": "Type",
+      "name": "type",
+      "type": "enum",
+      "description": "Type of changes",
+      "options": [
+        {
+          "label": "---",
+          "value": ""
+        },
+        {
+          "label": "chore",
+          "description": "Maintenance or housekeeping tasks."
+        },
+        {
+          "label": "ci",
+          "description": "Changes to configuration, dependancies or build scripts."
+        },
+        {
+          "label": "feat",
+          "description": "A new feature."
+        },
+        {
+          "label": "fix",
+          "description": "A bug fix."
+        },
+        {
+          "label": "revert",
+          "description": "Undo specific changes."
+        },
+        {
+          "label": "test",
+          "description": "Changes to tests."
+        }
+      ]
+    },
+    {
+      "label": "Scope",
+      "name": "scope",
+      "type": "enum",
+      "description": "Additional contextual information e.g., \"feat(parser): add ability to parse arrays\".",
+      "prefix": "(",
+      "suffix": ")",
+      "options": [
+        {
+          "label": "---",
+          "value": "",
+          "description": ""
+        },
+        {
+          "label": "User Experience",
+          "value": "ux",
+          "description": "Changes to design or interaction elements."
+        },
+        {
+          "label": "Deverloper Experience",
+          "value": "dx",
+          "description": "Changes to tooling or configutation."
+        },
+        {
+          "label": "Work in Progress",
+          "value": "wip",
+          "description": "Changes that are not complete yet."
+        },
+        {
+          "label": "Data",
+          "value": "data",
+          "description": "Changes to data schemes (DB or API)."
+        }
+      ]
+    },
+    {
+      "label": "Short description",
+      "name": "description",
+      "description": "Short description in the subject line.",
+      "type": "text",
+      "multiline": false
+    },
+    {
+      "label": "Body",
+      "name": "body",
+      "description": "Optional body",
+      "type": "text",
+      "multiline": true,
+      "lines": 5,
+      "maxLines": 10
+    },
+    {
+      "label": "Breaking change",
+      "name": "breaking_change",
+      "type": "boolean",
+      "value": "!"
+    }
+  ]
+}

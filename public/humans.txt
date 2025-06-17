@@ -1,0 +1,23 @@
+/* https://humanstxt.org/ */
+
+/* Site */
+Title:            Thomas Aidan Curran Official Website
+URL:              https://thomasaidancurran.com/
+Language:         English
+Web Framework:    [Astro](https://astro.build/)
+CSS Framework:    [tailwindcss](https://tailwindcss.com/)
+Components:       [shadcn/ui](https://ui.shadcn.com/)
+Color Scheme:     [Material Design 3](https://m3.material.io/styles/color/system/overview)
+Fonts:            [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans)
+                  [Noto Sans Mono](https://fonts.google.com/noto/specimen/Noto+Sans+Mono)
+Hosting:          [GitHub Pages](https://pages.github.com/)
+Repository:       [tc-amorevino/thomasaidancurran-com](https://github.com/tc-amorevino/thomasaidancurran-com)
+
+/* TEAM */
+Thomas Aidan Curran
+[X](https://x.com/tacurran)
+[GitHub](https://github.com/tacurran)
+[LinkedIn](https://www.linkedin.com/in/thomasaidancurran/)
+
+Tommy Curran, Web Development
+[GitHub](https://github.com/tc-amorevino)

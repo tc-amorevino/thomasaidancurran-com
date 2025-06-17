@@ -1,0 +1,19 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+import { cn, getSiteUrl } from '@/lib/utils';
+
+interface Props extends Omit<HTMLAttributes<'a'>, 'href' | 'title'> {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+const root = getSiteUrl(Astro.site);
+---
+
+<a
+  href={root}
+  title="Thomas Aidan Curran Homepage"
+  class={cn('font-mono leading-none text-primary tracking-widest', className)}>
+  Thomas Aidan Curran
+</a>

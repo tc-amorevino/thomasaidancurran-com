@@ -1,0 +1,50 @@
+{
+  // Version of the setting file.  Always 0.2
+  "version": "0.2",
+  // language - current active spelling language
+  "language": "en",
+  // words - list of words to be always considered correct
+  "words": [
+    "Aidan",
+    "amorevino",
+    "Balderton",
+    "BAPI",
+    "Boerse",
+    "callees",
+    "ebusiness",
+    "IPTV",
+    "Kratos",
+    "Kukowski",
+    "Middelhoff",
+    "Netweaver",
+    "Noto",
+    "nvmrc",
+    "organisation",
+    "predev",
+    "prosumer",
+    "prosumers",
+    "reengineering",
+    "reversinglabs",
+    "sapphirenow",
+    "shadcn",
+    "stylecheck",
+    "thomasaidancurran",
+    "Voxist",
+    "webp",
+    "withastro",
+    "xlink"
+  ],
+  "flagWords": [],
+  "ignorePaths": [
+    "node_modules/**",
+    "public/robots.txt"
+  ],
+  "import": [],
+  "useGitignore": true,
+  "enabled": true,
+  "enableFiletypes": [
+    "astro",
+    "mdx",
+    "tsx"
+  ]
+}

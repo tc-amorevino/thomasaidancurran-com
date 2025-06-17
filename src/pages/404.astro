@@ -1,0 +1,22 @@
+---
+import LayoutMain from '@/layouts/LayoutMain.astro';
+import { type SeoValidate } from '@/lib/utils';
+import { getSiteUrl, makeUrl } from '@/lib/utils';
+
+const root = getSiteUrl(Astro.site);
+const seo: SeoValidate = {
+  page_title: '404 Error - Page Not Found',
+  page_description: 'The page you are looking for was not found.',
+  robots_noindex: true,
+  canonical_url: makeUrl(root, Astro.url.pathname),
+};
+---
+
+<LayoutMain seo={seo}>
+  <main slot="main">
+    <h1 class="bg-background font-mono text-5xl text-primary">404 Error</h1>
+    <p class="text-2xl text-primary">
+      The page you are looking for was not found
+    </p>
+  </main>
+</LayoutMain>

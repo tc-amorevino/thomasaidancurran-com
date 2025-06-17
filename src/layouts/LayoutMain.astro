@@ -1,0 +1,100 @@
+---
+import '@/styles/base.css';
+
+import { type SeoValidate, seoValidation } from '@/lib/utils';
+import Footer from '@/sections/Footer.astro';
+import Header from '@/sections/Header.astro';
+
+interface Props {
+  seo: SeoValidate;
+}
+
+let seo;
+try {
+  seo = seoValidation(Astro.props.seo);
+} catch (error) {
+  throw new Error(
+    `SEO validation failed: ${error instanceof Error ? error.message : String(error)}, at ${Astro.url}`,
+  );
+}
+const robots = [
+  seo.robots_noindex && 'noindex',
+  seo.robots_nofollow && 'nofollow',
+]
+  .filter(Boolean)
+  .join(' ');
+
+/**
+ * To Do:
+ * Add JSON-LD
+ */
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- Site Icons: Start -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <!-- Site Icons: End -->
+
+    <!-- Site Metadata: Start -->
+    <title>{seo.page_title}</title>
+    <meta name="description" content={seo.page_description} />
+    <link rel="canonical" href={seo.canonical_url} />
+    {robots && <meta name="robots" content={robots} />}
+    <!-- Site Metadata: End -->
+
+    <!-- Site JSON LD: Start -->
+    <script is:inline type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Thomas Aidan Curran",
+        "url": "https://thomasaidancurran.com",
+        "image": "https://www.yourwebsite.com/img/thomas-aidan-curran-profile-picture_800x800jpg",
+        "sameAs": [
+          "https://www.linkedin.com/in/thomasaidancurran/",
+          "https://x.com/tacurran",
+          "https://github.com/tacurran"
+        ],
+        "jobTitle": "Advisor / Investor / Entrepreneur / Author",
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "The Wharton School of the University of Pennsylvania"
+        },
+        "gender": "Male",
+        "nationality": "Irish-American",
+        "description": "Thomas Aidan Curran is a technologist and serial software entrepreneur. His career spans the C-suite of Fortune 500 technology and media companies and has founded seven high-tech software ventures.",
+        "knowsAbout": [
+          "Software",
+          "Digital Media",
+          "AI",
+          "Entrepreneurship",
+          "Cyber Security"
+        ]
+      }
+    </script>
+    <!-- Site JSON LD: End -->
+
+    <meta name="viewport" content="width=device-width" />
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen bg-muted">
+    <div id="canvas" class="flex min-h-screen flex-col bg-background">
+      <Header />
+      <main class="flex grow flex-col">
+        <slot name="main" />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+[
+  {
+    "slug": "sap-r-3-business-blueprint-understanding-the-business-process-reference-model",
+    "title": "SAP R/3 Business Blueprint: Understanding the Business Process Reference Model",
+    "image": "src/cms/images/sap-r-3-business-blueprint-understanding-the-business-process-reference-model_356x475.jpg",
+    "href": "https://www.amazon.com/s?k=978-0135211472",
+    "year": 1997,
+    "type": "book"
+  },
+  {
+    "slug": "sap-r-3-business-blueprint-understanding-enterprise-supply-chain-management",
+    "title": "SAP R/3 Business Blueprint: Understanding Enterprise Supply Chain Management",
+    "image": "src/cms/images/sap-r-3-business-blueprint-understanding-enterprise-supply-chain-management_1127x1500.jpg",
+    "href": "https://www.amazon.com/s?k=978-0130853400",
+    "year": 1999,
+    "type": "book"
+  },
+  {
+    "slug": "sap-r-3-reporting-ebusiness-intelligence",
+    "title": "SAP R/3 Reporting & eBusiness Intelligence",
+    "image": "src/cms/images/sap-r-3-reporting-ebusiness-intelligence_356x475.jpg",
+    "href": "https://www.amazon.com/s?k=978-0130226150",
+    "year": 2000,
+    "type": "book"
+  },
+  {
+    "slug": "uber-why-germany-needs-your-help-now",
+    "title": "Uber — Why Germany needs your help now",
+    "href": "https://medium.com/@tacurran/uber-why-germany-needs-your-help-now-c535691f8bab",
+    "type": "article",
+    "year": 2014
+  },
+  {
+    "slug": "out-of-compliance-with-the-truth-saps-turbulent-journey-to-the-cloud",
+    "title": "Out of Compliance with the Truth? SAP's Turbulent Journey to the Cloud",
+    "href": "https://medium.com/@tacurran/out-of-compliance-with-the-truth-sap-s-turbulent-journey-into-the-cloud-5154786163ed",
+    "image": "src/cms/images/out-of-compliance-with-the-truth-saps-turbulent-journey-to-the-cloud_640x457.jpg",
+    "type": "article",
+    "year": 2015
+  },
+  {
+    "slug": "three-simple-ways-github-impacts-any-organisation",
+    "title": "Three simple ways GitHub impacts any organisation",
+    "href": "https://medium.com/@tacurran/three-simple-ways-github-impacts-any-organisation-8bc1db5a7d5b",
+    "image": "src/cms/images/three-simple-ways-github-impacts-any-organisation_720x540.jpg",
+    "type": "article",
+    "year": 2018
+  },
+  {
+    "slug": "sapphirenow-2020-madison-avenue-or-main-street",
+    "title": "SAPPHIRENow 2020: Madison Avenue or Main Street?",
+    "href": "https://www.linkedin.com/pulse/sapphirenow-2020-madison-avenue-main-street-thomas-aidan-curran/",
+    "image": "src/cms/images/sapphirenow-2020-madison-avenue-or-main-street_1448x600.jpg",
+    "type": "article",
+    "year": 2020
+  }
+]

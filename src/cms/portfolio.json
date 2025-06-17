@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "voxist",
+    "title": "Voxist",
+    "description": "Enterprise ready, API-first voice-to-intelligence AI models",
+    "image": "src/cms/images/voxist_840x840.jpg",
+    "href": "https://www.voxist.com/",
+    "type": "advisor"
+  },
+  {
+    "slug": "aladdin",
+    "title": "Aladdin",
+    "description": "AI for autonomous waste sorting and transportation",
+    "image": "src/cms/images/aladdin_840x840.jpg",
+    "href": "https://www.aladdin.link/en",
+    "type": "advisor"
+  },
+  {
+    "slug": "predev",
+    "title": "pre.dev",
+    "description": "AI Platform for software architecture and development scoping",
+    "image": "src/cms/images/predev_840x840.jpg",
+    "href": "https://pre.dev/",
+    "type": "angel investor"
+  },
+  {
+    "slug": "alembic",
+    "title": "Alembic",
+    "description": "AI for marketing analytics & intelligence",
+    "image": "src/cms/images/alembic_840x840.jpg",
+    "href": "https://getalembic.com/",
+    "type": "angel investor"
+  },
+  {
+    "slug": "amorevino",
+    "title": "AMOREVINO",
+    "description": "AI integrated product information management (PIM) platform for the wine industry",
+    "image": "src/cms/images/amorevino_840x840.jpg",
+    "href": "https://www.amorevino.com/",
+    "type": "angel investor"
+  },
+  {
+    "slug": "reversinglabs",
+    "title": "ReversingLabs",
+    "description": "Platform for software-supply-chain security analysis and threat detection.",
+    "image": "src/cms/images/reversinglabs_840x840.jpg",
+    "href": "https://www.reversinglabs.com/",
+    "type": "advisor"
+  },
+  {
+    "slug": "ory",
+    "title": "Ory",
+    "description": "Open-source & zero trust identity and access management platform",
+    "image": "src/cms/images/ory_840x840.jpg",
+    "href": "https://www.ory.sh/",
+    "type": "founder"
+  }
+]

@@ -1,0 +1,7 @@
+.grid-background {
+  background-size: 2rem 2rem;
+  background-image:
+    linear-gradient(to right, hsl(var(--card) / 60%) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--card) / 60%) 1px, transparent 1px);
+  background-position: -1rem -1rem;
+}

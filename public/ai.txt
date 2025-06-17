@@ -1,0 +1,21 @@
+# ai.txt for thomasaidancurran.com
+# About: https://spawning.ai/ai-txt
+
+User-Agent: *
+Allow: *.txt
+Allow: *.pdf
+Allow: *.html
+Allow: *.gif
+Allow: *.ico
+Allow: *.jpeg
+Allow: *.jpg
+Allow: *.png
+Allow: *.svg
+Allow: *.webp
+Allow: *.m4a
+Allow: *.mp3
+Allow: *.mp4
+Allow: *.webm
+Allow: *.js
+Allow: *.css
+Allow: /

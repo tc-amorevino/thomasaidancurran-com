@@ -1,0 +1,21 @@
+# Node Modules #
+################
+node_modules
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+
+# Environment Variables #
+#########################
+.env
+.env.*
+
+# Astro hidden types #
+######################
+.astro
+
+# Build Output #
+################
+dist
