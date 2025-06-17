@@ -1,0 +1,87 @@
+name: CI on PR Opened
+on:
+  pull_request:
+    branches: [live]
+    types: [opened, reopened]
+  workflow_dispatch:
+
+jobs:
+  check_version_bump:
+    name: 'Check Version Bump'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout Code Live'
+        uses: actions/checkout@v4
+        with:
+          path: live
+          ref: ${{ github.event.pull_request.base.ref }}
+
+      - name: 'Checkout Code PR'
+        uses: actions/checkout@v4
+        with:
+          path: pr
+
+      - name: 'Install NodeJS via .nvmrc'
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'pr/.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: 'pr/package-lock.json'
+
+      - name: 'Get the Live package.json version'
+        id: live_version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+        with:
+          path: 'live'
+      - run: 'echo Live Version: ${{ steps.live_version.outputs.current-version }}'
+        shell: bash
+
+      - name: 'Get the PR package.json version'
+        id: pr_version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+        with:
+          path: 'pr'
+      - run: 'echo PR Version: ${{ steps.pr_version.outputs.current-version }}'
+        shell: bash
+
+      - name: 'Fail if the PR version is not greater than the Live version'
+        run: |
+          live_version="${{ steps.live_version.outputs.current-version }}"
+          pr_version="${{ steps.pr_version.outputs.current-version }}"
+          if [[ "${{ steps.live_version.outputs.current-version }}" == "${{ steps.pr_version.outputs.current-version }}" ]]; then
+            echo "Version has not been bumped (${{ steps.live_version.outputs.current-version }} / ${{ steps.pr_version.outputs.current-version }})"
+            exit 1
+          fi
+        shell: bash
+
+  lint_checks:
+    name: 'Lint & Checks'
+    runs-on: ubuntu-latest
+    needs: check_version_bump
+
+    steps:
+      - name: 'Checkout Code'
+        uses: actions/checkout@v4
+
+      - name: 'Install NodeJS via .nvmrc'
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: './package-lock.json'
+
+      - name: 'Install Dependencies'
+        run: npm ci
+
+      - name: 'Run Lint'
+        run: npm run lint
+
+      - name: 'Run Style Check'
+        run: npm run stylecheck
+
+      - name: 'Run Spellcheck'
+        run: npm run styling
+
+      - name: 'Run Checks'
+        run: npm run check
