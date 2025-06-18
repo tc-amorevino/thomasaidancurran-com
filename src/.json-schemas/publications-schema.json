@@ -25,10 +25,22 @@
       },
       "type": {
         "type": "string",
-        "enum": ["book", "article", "essay", "report", "other"]
+        "enum": [
+          "book",
+          "article",
+          "essay",
+          "report",
+          "other"
+        ]
       }
     },
-    "required": ["slug", "title", "href", "year", "type"],
+    "required": [
+      "slug",
+      "title",
+      "href",
+      "year",
+      "type"
+    ],
     "additionalProperties": false
   },
   "$schema": "http://json-schema.org/draft-07/schema#"
