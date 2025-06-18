@@ -1,0 +1,2 @@
+# Ignore auto-gen json schemas
+src/.json-schemas/

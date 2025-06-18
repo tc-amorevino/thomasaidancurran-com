@@ -3,7 +3,7 @@
 <!-- markdown-link-check-disable -->
 
 ![PR Open Checks](https://github.com/tc-amorevino/thomasaidancurran-com/actions/workflows/pr-opened.yml/badge.svg)
-![PR Closed Build](https://github.com/tc-amorevino/thomasaidancurran-com/actions/workflows/pr-closed.yml/badge.svg)
+![PR Closed Build](https://github.com/tc-amorevino/thomasaidancurran-com/actions/workflows/pr-merged.yml/badge.svg)
 
 <!-- markdown-link-check-enable -->
 
