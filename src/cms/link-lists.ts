@@ -9,7 +9,7 @@ export const footerLinksSite = [
   },
   {
     title: 'humans.txt',
-    href: `/human.txt`,
+    href: `/humans.txt`,
   },
   {
     title: 'ai.txt',
