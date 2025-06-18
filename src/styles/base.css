@@ -116,6 +116,26 @@
     @apply selection:bg-muted selection:text-muted-foreground;
   }
 
+  /* Header style defaults */
+  h1 {
+    @apply text-2xl font-bold;
+  }
+  h2 {
+    @apply text-xl font-semibold;
+  }
+  h3 {
+    @apply text-lg font-semibold;
+  }
+  h4 {
+    @apply text-base font-medium;
+  }
+  h5 {
+    @apply text-sm font-medium;
+  }
+  h6 {
+    @apply text-xs font-medium;
+  }
+
   /* Custom canvas style */
   .canvas-outer {
     @apply px-2;
@@ -128,7 +148,6 @@
   .bg-stripes-diagonal {
     @apply bg-[image:repeating-linear-gradient(315deg,_hsl(_var(--border))_0,_hsl(_var(--border))_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px];
   }
-
   .bg-dotted {
     @apply [background-image:radial-gradient(hsl(_var(--border)/30%)_1px,transparent_1px)] [background-size:16px_16px];
   }
