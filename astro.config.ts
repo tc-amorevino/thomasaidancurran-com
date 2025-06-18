@@ -11,9 +11,6 @@ export default defineConfig({
   build: {
     assets: '_assets',
   },
-  prefetch: {
-    prefetchAll: true,
-  },
   experimental: {
     contentIntellisense: true,
   },
