@@ -1,8 +1,7 @@
-name: CI on PR Closed
+name: CI on PR Merged
 on:
-  pull_request:
+  push:
     branches: [live]
-    types: [closed]
   workflow_dispatch:
 
 permissions:
