@@ -84,7 +84,7 @@ jobs:
         run: npm run stylecheck
 
       - name: 'Run Spellcheck'
-        run: npm run styling
+        run: npm run spellcheck
 
       - name: 'Run Checks'
         run: npm run check
