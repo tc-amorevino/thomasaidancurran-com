@@ -6,19 +6,17 @@ import * as PortfolioIntro from '@/cms/blocks/portfolio.mdx';
 import Link from '@/components/Link.astro';
 import LayoutMain from '@/layouts/LayoutMain.astro';
 import { type SeoValidate } from '@/lib/utils';
-import { getSiteUrl, makeUrl } from '@/lib/utils';
 import Post from '@/sections/Post.astro';
 
 const Content = PortfolioIntro.Content;
 
 const portfolio = await getCollection('portfolio');
 
-const root = getSiteUrl(Astro.site);
 const seo: SeoValidate = {
-  page_title: 'Portfolio & Angel Investment of Thomas Aidan Curran',
+  page_title: 'Portfolio & Angel Investments of Thomas Aidan Curran',
   page_description:
     'Investments in next generation software companies focusing on AI to streamline business workflows and enhance decision-making.',
-  canonical_url: makeUrl(root, Astro.url.pathname),
+  canonical_url: 'https://thomasaidancurran.com/portfolio/',
 };
 
 /**

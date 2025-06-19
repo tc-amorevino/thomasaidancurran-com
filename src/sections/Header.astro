@@ -4,9 +4,8 @@ import '@/styles/custom-utils.css';
 import { headerLinksNav } from '@/cms/link-lists';
 import Link from '@/components/Link.astro';
 import Logo from '@/components/Logo.astro';
-import { cn, getSiteUrl, makeUrl } from '@/lib/utils';
+import { cn } from '@/lib/utils';
 
-const root = getSiteUrl(Astro.site);
 const isActive = (link: (typeof headerLinksNav)[number]) => {
   return link.href === Astro.url.pathname
     ? 'bg-popover text-popover-foreground'
@@ -29,9 +28,7 @@ const isActive = (link: (typeof headerLinksNav)[number]) => {
               {
                 headerLinksNav.map((link) => (
                   <li class={cn('rounded-full px-3', isActive(link))}>
-                    <Link
-                      href={makeUrl(root, link.href)}
-                      class="text-sm tracking-wider">
+                    <Link href={link.href} class="text-sm tracking-wider">
                       {link.title}
                     </Link>
                   </li>

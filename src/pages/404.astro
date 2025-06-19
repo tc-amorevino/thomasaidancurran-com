@@ -1,22 +1,35 @@
 ---
+import Link from '@/components/Link.astro';
 import LayoutMain from '@/layouts/LayoutMain.astro';
 import { type SeoValidate } from '@/lib/utils';
-import { getSiteUrl, makeUrl } from '@/lib/utils';
+import Post from '@/sections/Post.astro';
 
-const root = getSiteUrl(Astro.site);
 const seo: SeoValidate = {
   page_title: '404 Error - Page Not Found',
   page_description: 'The page you are looking for was not found.',
   robots_noindex: true,
-  canonical_url: makeUrl(root, Astro.url.pathname),
+  canonical_url: 'https://thomasaidancurran.com/404',
 };
 ---
 
 <LayoutMain seo={seo}>
-  <main slot="main">
-    <h1 class="bg-background font-mono text-5xl text-primary">404 Error</h1>
-    <p class="text-2xl text-primary">
-      The page you are looking for was not found
-    </p>
-  </main>
+  <div slot="main" class="-mt-px flex grow flex-col">
+    <div class="canvas-outer border-t">
+      <div class="canvas-inner o h-8 border-x"></div>
+    </div>
+    <Post>
+      <Fragment slot="post">
+        <h1 class="font-mono">404 Error / Page not found</h1>
+        <p>The page you are looking for was not found.</p>
+        <p>
+          Please visit the <Link href="https://thomasaidancurran.com/"
+            >homepage</Link
+          > for other content.
+        </p>
+      </Fragment>
+    </Post>
+    <div class="canvas-outer border-t">
+      <div class="canvas-inner o h-8 border-x"></div>
+    </div>
+  </div>
 </LayoutMain>

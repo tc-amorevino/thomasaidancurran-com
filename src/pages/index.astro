@@ -2,18 +2,16 @@
 import * as About from '@/cms/blocks/about.mdx';
 import LayoutMain from '@/layouts/LayoutMain.astro';
 import { type SeoValidate } from '@/lib/utils';
-import { getSiteUrl, makeUrl } from '@/lib/utils';
 import Post from '@/sections/Post.astro';
 import Profile from '@/sections/Profile.astro';
 
 const Content = About.Content;
 
-const root = getSiteUrl(Astro.site);
 const seo: SeoValidate = {
   page_title: 'Thomas Aidan Curran Official Website',
   page_description:
     'Thomas Aidan Curran: Seasoned technologist and entrepreneur. Gain insights from his experience advising on AI, cybersecurity, and digital transformation.',
-  canonical_url: makeUrl(root, Astro.url.pathname),
+  canonical_url: 'https://thomasaidancurran.com/',
 };
 
 /**
