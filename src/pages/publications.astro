@@ -6,19 +6,17 @@ import * as PublicationsIntro from '@/cms/blocks/publications.mdx';
 import Link from '@/components/Link.astro';
 import LayoutMain from '@/layouts/LayoutMain.astro';
 import { type SeoValidate } from '@/lib/utils';
-import { getSiteUrl, makeUrl } from '@/lib/utils';
 import Post from '@/sections/Post.astro';
 
 const Content = PublicationsIntro.Content;
 
 const publications = await getCollection('publications');
 
-const root = getSiteUrl(Astro.site);
 const seo: SeoValidate = {
   page_title: 'Books and Publications by Thomas Aidan Curran',
   page_description:
     'Explore "SAP R/3 Business Blueprint" and other key publications by Thomas Aidan Curran on business process reengineering, AI, and digital transformation.',
-  canonical_url: makeUrl(root, Astro.url.pathname),
+  canonical_url: 'https://thomasaidancurran.com/publications/',
 };
 
 /**

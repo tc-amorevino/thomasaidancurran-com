@@ -15,7 +15,7 @@ export default defineConfig({
     contentIntellisense: true,
   },
   output: 'static',
-  trailingSlash: 'never',
+  trailingSlash: 'always',
   scopedStyleStrategy: 'class',
   integrations: [tailwind({ applyBaseStyles: false }), mdx(), sitemap()],
 });

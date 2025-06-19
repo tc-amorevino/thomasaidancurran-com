@@ -1,19 +1,19 @@
 export const footerLinksSite = [
   {
     title: 'sitemap.xml',
-    href: `/sitemap-index.xml`,
+    href: `https://thomasaidancurran.com/sitemap-index.xml`,
   },
   {
     title: 'robots.txt',
-    href: `/robots.txt`,
+    href: `https://thomasaidancurran.com/robots.txt`,
   },
   {
     title: 'humans.txt',
-    href: `/humans.txt`,
+    href: `https://thomasaidancurran.com/humans.txt`,
   },
   {
     title: 'ai.txt',
-    href: `/ai.txt`,
+    href: `https://thomasaidancurran.com/ai.txt`,
   },
 ] as const;
 
@@ -35,22 +35,22 @@ export const footerLinksSocial = [
 export const headerLinksNav = [
   {
     title: 'About',
-    href: `/`, // home root
+    href: `https://thomasaidancurran.com/`,
   },
   // {
   //   title: 'Blog',
-  //   href: `/blog`,
+  //   href: `https://thomasaidancurran.com/blog`,
   // },
   {
     title: 'Publications',
-    href: `/publications`,
+    href: `https://thomasaidancurran.com/publications/`,
   },
   {
     title: 'Portfolio',
-    href: `/portfolio`,
+    href: `https://thomasaidancurran.com/portfolio/`,
   },
   // {
   //   title: 'Media',
-  //   href: `/media`,
+  //   href: `https://thomasaidancurran.com/media`,
   // },
 ] as const;
