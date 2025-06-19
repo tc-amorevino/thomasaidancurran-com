@@ -64,18 +64,6 @@ export function getDomain(url: URL) {
 }
 
 /**
- * This function creates a new URL object based on a root URL and a path.
- * @param root The root URL to be used as the base.
- * @param path The path to be appended to the root URL.
- * @returns The full URL as a string.
- */
-export function makeUrl(root: URL, path: string) {
-  const rootValid = validateHref(root.href);
-  const newUrl = new URL(path, rootValid);
-  return newUrl.href;
-}
-
-/**
  * This function validates SEO-related data structures using the zod library.
  * It checks the page title, description, robots directives, and canonical URL.
  * @returns An object containing the validated SEO data or throws an error if
@@ -96,7 +84,7 @@ const _seoValidate = z.object({
   robots_noindex: z.boolean().default(false).optional(),
   /** Whether links on the page should not be followed by search engine crawlers */
   robots_nofollow: z.boolean().default(false).optional(),
-  /** The canonical URL of the page, _no trailing slash_ */
+  /** The canonical URL of the page, _with trailing slash_ */
   canonical_url: z.string().url().min(1, 'Canonical URL is required'),
 });
 
