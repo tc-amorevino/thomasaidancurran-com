@@ -48,23 +48,36 @@ The following products are used throughout the project:
 | Tailwind | [Docs](https://tailwindcss.com/docs/installation)    | [Changelog](https://github.com/tailwindlabs/tailwindcss/blob/master/CHANGELOG.md)                |
 | Shadcn   | [Docs](https://ui.shadcn.com/docs)                   | [Changelog](https://ui.shadcn.com/docs/changelog)                                                |
 
-### Linting
+### Pull Requests
 
-Before committing, or more specifically, before creating a pull request, run the following command to ensure the code is
-linted and formatted correctly:
+Before creating a pull request, increment the project versions in the [`package.json`](./package.json) file.
+
+```zsh
+# package.json
+
+"version": "1.0.0",
+
+```
+
+### Linting, Code Style & Spell Checking
+
+Before committing, or more specifically, before creating a pull request, run the following commands to ensure the code
+is linted and formatted correctly:
 
 ```zsh
 npm run lint
-```
 
-> **TODO:** Add spell checking to the linting process.
+npm run stylecheck
+
+npm run spellcheck
+```
 
 This will check the code for any linting errors, including prettier formatting guidelines.
 
 ### Commit Messages
 
-The project encourages the [Conventional Commits](https://www.conventionalcommits.org/) standard for commit messages and
-branch naming. This is to ensure a consistent and readable commit history. The
+The project encourages the [Conventional Commits](https://www.conventionalcommits.org/) standard for commit messages.
+This is to ensure a consistent and readable commit history. The
 [Commit Message Editor](https://marketplace.visualstudio.com/items?itemName=adam-bender.commit-message-editor) VSCode
 extension can be installed to help with drafting the commit messages. It adds a button (pencil icon) to the source
 control tab in VSCode, which opens a form to create a commit message.
@@ -78,5 +91,5 @@ feat(data)!: changed main navigation component to client side load
 ## Deployment
 
 Deployments are handled by GitHub actions, which are triggered by a branch merge to the `live` branch. The action builds
-the project and stored the `dist` folder to github pages. Code pushes to`live` branch directly are disabled. Use pull
+the project and stores the `dist` folder to github pages. Code pushes to`live` branch directly are disabled. Use pull
 requests to merge changes to these branches and trigger the deployment.
