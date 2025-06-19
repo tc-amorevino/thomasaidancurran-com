@@ -7,7 +7,7 @@ import Logo from '@/components/Logo.astro';
 import { cn } from '@/lib/utils';
 
 const isActive = (link: (typeof headerLinksNav)[number]) => {
-  return link.href === Astro.url.pathname
+  return link.href === Astro.url.href
     ? 'bg-popover text-popover-foreground'
     : null;
 };
