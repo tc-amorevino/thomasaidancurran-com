@@ -12,6 +12,7 @@ export default defineConfig({
     assets: '_assets',
   },
   experimental: {
+    csp: true,
     contentIntellisense: true,
     fonts: [
       {
