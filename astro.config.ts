@@ -95,6 +95,8 @@ export default defineConfig({
     tailwind({ applyBaseStyles: false }),
     mdx(),
     sitemap(),
+    // To DO: Remove this when astro-html-beautifier is updated to support TypeScript
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     htmlBeautifier(),
   ],
 });
