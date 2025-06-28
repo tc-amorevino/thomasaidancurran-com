@@ -1,6 +1,5 @@
 import typography from '@tailwindcss/typography';
 import type { Config } from 'tailwindcss';
-import { fontFamily } from 'tailwindcss/defaultTheme';
 import tailwindAnimate from 'tailwindcss-animate';
 
 export default {
@@ -9,8 +8,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['NotoSans', 'sans-serif', ...fontFamily.sans],
-        mono: ['NotoSansMono', 'monospace', ...fontFamily.mono],
+        sans: ['var(--font-notosans)'],
+        condensed: ['var(--font-notosanscondensed)'],
+        mono: ['var(--font-notosansmono)'],
       },
       borderRadius: {
         lg: 'var(--radius)',
