@@ -2,6 +2,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import { defineConfig } from 'astro/config';
+import htmlBeautifier from 'astro-html-beautifier';
 
 export default defineConfig({
   site: 'https://thomasaidancurran.com/',
@@ -11,10 +12,7 @@ export default defineConfig({
   build: {
     assets: '_assets',
   },
-  image: {
-    responsiveStyles: true,
-    layout: 'constrained',
-  },
+  image: {},
   experimental: {
     csp: true,
     contentIntellisense: true,
@@ -93,5 +91,10 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'always',
   scopedStyleStrategy: 'class',
-  integrations: [tailwind({ applyBaseStyles: false }), mdx(), sitemap()],
+  integrations: [
+    tailwind({ applyBaseStyles: false }),
+    mdx(),
+    sitemap(),
+    htmlBeautifier(),
+  ],
 });
