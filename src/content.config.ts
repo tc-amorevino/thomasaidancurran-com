@@ -66,8 +66,43 @@ const portfolio = defineCollection({
     ),
 });
 
-export const collections = { blog, publications, portfolio };
+/** The schema for media items */
+const mediaSchema = z.object({
+  /** Unique identifier for the media item */
+  slug: z.string().min(1, 'ID cannot be empty'),
+  /** Title of the media item */
+  title: z.string().min(1, 'Title cannot be empty'),
+  /** name of the publication of the media item */
+  publication: z.string().optional(),
+  /** Format of the media item */
+  format: z.enum(['video', 'article']),
+  /** Image reference for the media item, 'src/cms/images/...' */
+  image: z.string().optional(),
+  /** Link to the media item */
+  href: z.string().url(),
+  /** Type of media item */
+  type: z.enum(['interview', 'panel', 'commentary', 'presentation']),
+  /** Year of media in the format YYYY */
+  year: z
+    .number()
+    .int()
+    .min(1000, 'Year must be 4 digits')
+    .max(9999, 'Year must be 4 digits'),
+});
+
+const media = defineCollection({
+  loader: file('src/cms/media.json'),
+  schema: ({ image }) =>
+    mediaSchema.merge(
+      z.object({
+        image: image().optional(),
+      }),
+    ),
+});
+
+export const collections = { blog, publications, portfolio, media };
 
 // Create a json schema for the collection, runs with 'npx astro sync'
 generateJsonSchema(publicationsSchema.array(), 'publications-schema.json');
 generateJsonSchema(portfolioSchema.array(), 'portfolio-schema.json');
+generateJsonSchema(mediaSchema.array(), 'media-schema.json');

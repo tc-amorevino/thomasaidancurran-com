@@ -39,7 +39,7 @@ export const headerLinksNav = [
   },
   // {
   //   title: 'Blog',
-  //   href: `https://thomasaidancurran.com/blog`,
+  //   href: `https://thomasaidancurran.com/blog/`,
   // },
   {
     title: 'Publications',
@@ -49,8 +49,8 @@ export const headerLinksNav = [
     title: 'Portfolio',
     href: `https://thomasaidancurran.com/portfolio/`,
   },
-  // {
-  //   title: 'Media',
-  //   href: `https://thomasaidancurran.com/media`,
-  // },
+  {
+    title: 'Media',
+    href: `https://thomasaidancurran.com/media/`,
+  },
 ] as const;

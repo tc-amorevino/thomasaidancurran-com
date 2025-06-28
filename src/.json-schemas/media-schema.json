@@ -1,0 +1,57 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "slug": {
+        "type": "string",
+        "minLength": 1
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "publication": {
+        "type": "string"
+      },
+      "format": {
+        "type": "string",
+        "enum": [
+          "video",
+          "article"
+        ]
+      },
+      "image": {
+        "type": "string"
+      },
+      "href": {
+        "type": "string",
+        "format": "uri"
+      },
+      "type": {
+        "type": "string",
+        "enum": [
+          "interview",
+          "panel",
+          "commentary",
+          "presentation"
+        ]
+      },
+      "year": {
+        "type": "integer",
+        "minimum": 1000,
+        "maximum": 9999
+      }
+    },
+    "required": [
+      "slug",
+      "title",
+      "format",
+      "href",
+      "type",
+      "year"
+    ],
+    "additionalProperties": false
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

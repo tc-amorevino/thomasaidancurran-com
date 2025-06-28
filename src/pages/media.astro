@@ -1,0 +1,90 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+import * as MediaIntro from '@/cms/blocks/media.mdx';
+import Link from '@/components/Link.astro';
+import LayoutMain from '@/layouts/LayoutMain.astro';
+import { type SeoValidate } from '@/lib/utils';
+import Post from '@/sections/Post.astro';
+
+const Content = MediaIntro.Content;
+
+const media = await getCollection('media');
+
+const seo: SeoValidate = {
+  page_title: 'Interviews & Videos on AI & Tech by Thomas Aidan Curran',
+  page_description:
+    'Explore talks & articles from Thomas Aidan Curran on technology. Discover insights on scaling companies, open-source strategy, and the future of software.',
+  canonical_url: 'https://thomasaidancurran.com/media/',
+};
+
+/**
+ * Edit the media page text here:
+ * {@link src/cms/blocks/media.mdx}
+ * {@link src/.json-schemas/media-schema.json}
+ */
+---
+
+<LayoutMain seo={seo}>
+  <div slot="main" class="-mt-px flex grow flex-col">
+    <div class="canvas-outer border-t">
+      <div class="canvas-inner o h-8 border-x"></div>
+    </div>
+    <Post>
+      <Content slot="post" />
+    </Post>
+    <div class="canvas-outer border-t">
+      <div class="canvas-inner o h-8 border-x"></div>
+    </div>
+    <div class="canvas-outer border-t">
+      <div class="canvas-inner border-x">
+        <div
+          class="grid auto-rows-fr grid-cols-1 gap-px bg-border md:grid-cols-2">
+          {
+            media.map((media, i) => (
+              <div class="flex flex-col justify-between bg-white p-6">
+                <div class="pb-6">
+                  <div class="mb-6 flex h-[250px] items-center justify-center overflow-hidden">
+                    {media.data.image && (
+                      <Image
+                        class={'m-auto'}
+                        src={media.data.image}
+                        height={250}
+                        format="webp"
+                        alt={`${media.data.type} ${media.data.title}`}
+                        priority={i === 0 ? true : false}
+                      />
+                    )}
+                  </div>
+                  <p class="mb-2 font-mono text-xs tracking-wider text-foreground/80">
+                    [{media.data.type}, {media.data.year}]
+                  </p>
+                  <p class="font-medium">{media.data.title}</p>
+                  {media.data.publication && (
+                    <p class="mt-2 text-sm text-foreground/80">
+                      {media.data.publication}
+                    </p>
+                  )}
+                </div>
+                <p>
+                  <Link target={'_blank'} href={media.data.href}>
+                    {`${media.data.format === 'article' ? 'Read' : 'Watch'} ${media.data.format}`}
+                  </Link>
+                </p>
+              </div>
+            ))
+          }
+          {
+            media.length % 2 !== 0 && (
+              <div class="bg-stripes-diagonal hidden bg-white md:block" />
+            )
+          }
+        </div>
+      </div>
+    </div>
+    <div class="canvas-outer -mb-px border-y">
+      <div class="canvas-inner h-8 border-x"></div>
+    </div>
+  </div>
+</LayoutMain>
