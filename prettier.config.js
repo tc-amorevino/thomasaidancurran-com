@@ -12,8 +12,8 @@ const config = {
   printWidth: 80,
   tabWidth: 2,
   bracketSpacing: true,
-  endOfLine: 'lf',
-  bracketSameLine: true,
+  // htmlWhitespaceSensitivity: 'strict',
+  // bracketSameLine: true,
   overrides: [
     {
       files: ['*.astro'],
@@ -27,9 +27,6 @@ const config = {
         printWidth: 120,
         useTabs: false,
         proseWrap: 'always',
-        objectWrap: 'collapse',
-        bracketSameLine: true,
-        htmlWhitespaceSensitivity: 'strict',
       },
     },
   ],
