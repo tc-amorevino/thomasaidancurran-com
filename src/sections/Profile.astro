@@ -8,13 +8,14 @@ import profileImage from '@/cms/images/thomas-aidan-curran-profile-picture_800x8
   <div class="canvas-inner">
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
       <div class="bg-stripes-diagonal flex border py-4">
-        <!-- Column 1 content -->
-        <div class="self-center">
+        <div class="w-full self-center">
           <Image
             src={profileImage}
+            widths={[430, 767, 366]}
+            sizes={'(max-width: 430px) 430px, (max-width: 767px) 767px, 366px'}
+            class="w-full max-w-full"
             format="webp"
             alt="Thomas Aidan Curran Profile Picture"
-            layout="constrained"
             priority
           />
         </div>
