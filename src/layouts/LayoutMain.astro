@@ -1,6 +1,8 @@
 ---
 import '@/styles/base.css';
 
+import { Font } from 'astro:assets';
+
 import { type SeoValidate, seoValidation } from '@/lib/utils';
 import Footer from '@/sections/Footer.astro';
 import Header from '@/sections/Header.astro';
@@ -34,6 +36,12 @@ const robots = [
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
+
+    <!-- Site Fonts: Start -->
+    <Font cssVariable="--font-notosans" preload />
+    <Font cssVariable="--font-notosanscondensed" />
+    <Font cssVariable="--font-notosansmono" preload />
+    <!-- Site Fonts: End -->
 
     <!-- Site Icons: Start -->
     <link

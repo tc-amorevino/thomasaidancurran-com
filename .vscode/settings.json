@@ -61,6 +61,10 @@
       "fileMatch": ["src/cms/portfolio.json"],
       "url": "./src/.json-schemas/portfolio-schema.json"
     },
+    {
+      "fileMatch": ["src/cms/media.json"],
+      "url": "./src/.json-schemas/media-schema.json"
+    },
     // Project specific
     {
       "fileMatch": [".prettierrc", ".prettierrc.json", "prettier.config.json"],

@@ -45,69 +45,7 @@
 
     --radius: 0.25rem;
   }
-  @font-face {
-    font-family: 'NotoSans';
-    src: url('/fonts/NotoSans-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'NotoSans';
-    src: url('/fonts/NotoSans-Bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'NotoSans';
-    src: url('/fonts/NotoSans-BoldItalic.woff2') format('woff2');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'NotoSans';
-    src: url('/fonts/NotoSans-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'NotoSans';
-    src: url('/fonts/NotoSans-SemiBoldItalic.woff2') format('woff2');
-    font-weight: 600;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'NotoSans';
-    src: url('/fonts/NotoSans-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'NotoSans';
-    src: url('/fonts/NotoSans-LightItalic.woff2') format('woff2');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'NotoSans';
-    src: url('/fonts/NotoSans-Italic.woff2') format('woff2');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'NotoSansMono';
-    src: url('/fonts/NotoSansMono-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
+  /* Default styles */
   * {
     @apply border-border;
   }
@@ -118,7 +56,7 @@
 
   /* Header style defaults */
   h1 {
-    @apply text-2xl font-bold;
+    @apply text-xl font-bold;
   }
   h2 {
     @apply text-xl font-semibold;
@@ -127,13 +65,13 @@
     @apply text-lg font-semibold;
   }
   h4 {
-    @apply text-base font-medium;
+    @apply text-base font-semibold;
   }
   h5 {
-    @apply text-sm font-medium;
+    @apply text-base font-medium;
   }
   h6 {
-    @apply text-xs font-medium;
+    @apply text-sm font-medium;
   }
 
   /* Custom canvas style */

@@ -1,5 +1,5 @@
 ---
-import { Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
 
 import profileImage from '@/cms/images/thomas-aidan-curran-profile-picture_800x800.jpg';
 ---
@@ -10,13 +10,12 @@ import profileImage from '@/cms/images/thomas-aidan-curran-profile-picture_800x8
       <div class="bg-stripes-diagonal flex border py-4">
         <!-- Column 1 content -->
         <div class="self-center">
-          <Picture
+          <Image
             src={profileImage}
-            width={profileImage.width / 2}
-            densities={[2]}
-            formats={['webp', 'jpg']}
-            loading={'lazy'}
+            format="webp"
             alt="Thomas Aidan Curran Profile Picture"
+            layout="constrained"
+            priority
           />
         </div>
       </div>

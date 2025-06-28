@@ -2,27 +2,27 @@
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
-import * as PortfolioIntro from '@/cms/blocks/portfolio.mdx';
+import * as MediaIntro from '@/cms/blocks/media.mdx';
 import Link from '@/components/Link.astro';
 import LayoutMain from '@/layouts/LayoutMain.astro';
 import { type SeoValidate } from '@/lib/utils';
 import Post from '@/sections/Post.astro';
 
-const Content = PortfolioIntro.Content;
+const Content = MediaIntro.Content;
 
-const portfolio = await getCollection('portfolio');
+const media = await getCollection('media');
 
 const seo: SeoValidate = {
-  page_title: 'Portfolio & Angel Investments of Thomas Aidan Curran',
+  page_title: 'Interviews & Videos on AI & Tech by Thomas Aidan Curran',
   page_description:
-    'Investments in next generation software companies focusing on AI to streamline business workflows and enhance decision-making.',
-  canonical_url: 'https://thomasaidancurran.com/portfolio/',
+    'Explore talks & articles from Thomas Aidan Curran on technology. Discover insights on scaling companies, open-source strategy, and the future of software.',
+  canonical_url: 'https://thomasaidancurran.com/media/',
 };
 
 /**
- * Edit the publications page text here:
- * {@link src/cms/blocks/publications.mdx}
- * {@link src/.json-schemas/publications-schema.json}
+ * Edit the media page text here:
+ * {@link src/cms/blocks/media.mdx}
+ * {@link src/.json-schemas/media-schema.json}
  */
 ---
 
@@ -42,42 +42,41 @@ const seo: SeoValidate = {
         <div
           class="grid auto-rows-fr grid-cols-1 gap-px bg-border md:grid-cols-2">
           {
-            portfolio.map((portfolioItem, i) => (
+            media.map((media, i) => (
               <div class="flex flex-col justify-between bg-white p-6">
                 <div class="pb-6">
-                  <div class="mb-6 flex h-[200px] items-center justify-center overflow-hidden">
-                    {portfolioItem.data.image && (
+                  <div class="mb-6 flex h-[250px] items-center justify-center overflow-hidden">
+                    {media.data.image && (
                       <Image
-                        class={'m-auto size-[200px]'}
-                        src={portfolioItem.data.image}
-                        height={200}
+                        class={'m-auto'}
+                        src={media.data.image}
+                        height={250}
                         format="webp"
-                        quality={'max'}
-                        alt={`${portfolioItem.data.type} ${portfolioItem.data.title}`}
+                        alt={`${media.data.type} ${media.data.title}`}
                         priority={i === 0 ? true : false}
                       />
                     )}
                   </div>
                   <p class="mb-2 font-mono text-xs tracking-wider text-foreground/80">
-                    [{portfolioItem.data.type}]
+                    [{media.data.type}, {media.data.year}]
                   </p>
-                  <p class="font-medium">{portfolioItem.data.title}</p>
-                  {portfolioItem.data.description && (
+                  <p class="font-medium">{media.data.title}</p>
+                  {media.data.publication && (
                     <p class="mt-2 text-sm text-foreground/80">
-                      {portfolioItem.data.description}
+                      {media.data.publication}
                     </p>
                   )}
                 </div>
                 <p>
-                  <Link target={'_blank'} href={portfolioItem.data.href}>
-                    Visit
+                  <Link target={'_blank'} href={media.data.href}>
+                    {`${media.data.format === 'article' ? 'Read' : 'Watch'} ${media.data.format}`}
                   </Link>
                 </p>
               </div>
             ))
           }
           {
-            portfolio.length % 2 !== 0 && (
+            media.length % 2 !== 0 && (
               <div class="bg-stripes-diagonal hidden bg-white md:block" />
             )
           }

@@ -1,0 +1,152 @@
+[
+  {
+    "slug": "scaling-ai-startups-overcoming-challenges-building-for-the-future",
+    "title": "Scaling AI startups: Overcoming Challenges & Building for the Future",
+    "publication": "NVIDIA GTC",
+    "format": "video",
+    "image": "src/cms/images/scaling-ai-startups-overcoming-challenges-building-for-the-future_300x168.jpg",
+    "href": "https://www.nvidia.com/en-us/on-demand/session/gtc25-s74253/",
+    "type": "panel",
+    "year": 2025
+  },
+  {
+    "slug": "how-to-design-and-build-modern-open-source-software-in-go",
+    "title": "How to design and build modern open source software in Go",
+    "publication": "Google Developer Groups",
+    "format": "video",
+    "image": "src/cms/images/how-to-design-and-build-modern-open-source-software-in-go_299x168.jpg",
+    "href": "https://www.youtube.com/watch?v=IWDlVSSdKC8",
+    "type": "presentation",
+    "year": 2023
+  },
+  {
+    "slug": "how-the-ai-curse-could-become-a-blessing-for-journalism",
+    "title": "How the AI curse could become a blessing for journalism",
+    "publication": "Horizont Kongress (german)",
+    "format": "article",
+    "image": "src/cms/images/how-the-ai-curse-could-become-a-blessing-for-journalism_940x529.jpg",
+    "href": "https://www.horizont.net/medien/nachrichten/horizont-kongress-wie-der-ki-fluch-fuer-den-journalismus-zum-segen-werden-koennte-213079",
+    "type": "panel",
+    "year": 2023
+  },
+  {
+    "slug": "ory-lands-22-5m-for-zero-trust-security-powered-by-open-source",
+    "title": "Ory lands $22.5M for zero trust security powered by open source",
+    "publication": "VentureBeat",
+    "format": "article",
+    "image": "src/cms/images/ory-lands-22-5m-for-zero-trust-security-powered-by-open-source_750x401.jpg",
+    "href": "https://venturebeat.com/security/ory-lands-22-5m-for-zero-trust-security-powered-by-open-source/",
+    "type": "interview",
+    "year": 2021
+  },
+  {
+    "slug": "intersource-is-github-culture-and-open-source-principles",
+    "title": "Intersource is GitHub culture and open source principles",
+    "publication": "GitHub Satellite",
+    "format": "video",
+    "image": "src/cms/images/intersource-is-github-culture-and-open-source-principles_300x188.jpg",
+    "href": "https://www.youtube.com/watch?v=Kg3k_K65J5o",
+    "type": "presentation",
+    "year": 2019
+  },
+  {
+    "slug": "cloud-migration-means-transformation-at-deutsche-boerse-group",
+    "title": "Cloud Migration Means Transformation at Deutsche Börse Group",
+    "publication": "AWS Summit",
+    "format": "video",
+    "image": "src/cms/images/cloud-migration-means-transformation-at-deutsche-boerse-group_720x404.jpg",
+    "href": "https://www.youtube.com/watch?v=jQzAKh8OcFE",
+    "type": "presentation",
+    "year": 2018
+  },
+  {
+    "slug": "developer-platform-github-in-the-sign-of-the-octocat",
+    "title": "Developer Platform GitHub: In the Sign of the Octocat",
+    "publication": "Tagesspiegel (german)",
+    "format": "article",
+    "image": "src/cms/images/developer-platform-github-in-the-sign-of-the-octocat_1000x428.jpg",
+    "href": "https://www.tagesspiegel.de/wirtschaft/im-zeichen-der-krakenkatze-5535355.html",
+    "type": "commentary",
+    "year": 2018
+  },
+  {
+    "slug": "google-cloud-summit-munich-keynote",
+    "title": "Google Cloud Summit Munich Keynote",
+    "publication": "Google Cloud Summit",
+    "format": "video",
+    "image": "src/cms/images/google-cloud-summit-munich-keynote_600x300.jpg",
+    "href": "https://www.youtube.com/watch?v=sm3xLN0n95o&t=2910s",
+    "type": "panel",
+    "year": 2017
+  },
+  {
+    "slug": "the-man-for-whom-the-deutsche-boerse-was-too-slow",
+    "title": "The man for whom the Deutsche Börse was too slow (german)",
+    "publication": "Welt (german)",
+    "format": "article",
+    "image": "src/cms/images/the-man-for-whom-the-deutsche-boerse-was-too-slow_300x168.jpg",
+    "href": "https://www.welt.de/wirtschaft/plus169609106/Deutsche-Boerse-Thomas-Curran-digitalisiert-den-Konzern.html",
+    "type": "interview",
+    "year": 2017
+  },
+  {
+    "slug": "silicon-valley-insider-this-development-is-set-to-decisively-change-your-daily-life",
+    "title": "Silicon Valley Insider: This development is set to decisively change your daily life",
+    "publication": "Welt (german)",
+    "format": "article",
+    "image": "src/cms/images/silicon-valley-insider-this-development-is-set-to-decisively-change-your-daily-life_2000x1333.jpg",
+    "href": "https://www.welt.de/kmpkt/article170168893/Diese-Entwicklung-soll-deinen-Alltag-entscheidend-veraendern.html",
+    "type": "commentary",
+    "year": 2017
+  },
+  {
+    "slug": "unlocking-iots-potential-in-open-education",
+    "title": "Unlocking IOT's Potential in Open Education",
+    "publication": "webit",
+    "format": "video",
+    "image": "src/cms/images/unlocking-iots-potential-in-open-education_480x270.jpg",
+    "href": "https://www.youtube.com/watch?v=AT6TBhfxYFc",
+    "type": "presentation",
+    "year": 2014
+  },
+  {
+    "slug": "cto-design-challenge-privacy-vs-security-finding-a-technology-solution",
+    "title": "CTO Design Challenge: Privacy vs. Security: Finding a Technology Solution",
+    "publication": "FiRe: Future in Review",
+    "format": "video",
+    "image": "src/cms/images/cto-design-challenge-privacy-vs-security-finding-a-technology-solution_720x404.jpg",
+    "href": "https://www.youtube.com/watch?v=h2rXjqdQtTE",
+    "type": "panel",
+    "year": 2014
+  },
+  {
+    "slug": "cto-design-challenge-scaling-alternative-energy-how-can-it-be-done",
+    "title": "CTO Design Challenge: Scaling Alternative Energy: How Can It Be Done?",
+    "publication": "FiRe: Future in Review",
+    "format": "video",
+    "image": "src/cms/images/cto-design-challenge-scaling-alternative-energy-how-can-it-be-done_336x188.jpg",
+    "href": "https://www.youtube.com/watch?v=V7sv9BSeYhc",
+    "type": "panel",
+    "year": 2010
+  },
+  {
+    "slug": "broadband",
+    "title": "Broadband",
+    "publication": "DLD Conference",
+    "format": "video",
+    "image": "src/cms/images/broadband_336x188.jpg",
+    "href": "https://www.youtube.com/watch?v=fvoIi2ZOU8s",
+    "type": "panel",
+    "year": 2010
+  },
+  {
+    "slug": "enquiry-commission-on-the-internet-and-digital-society",
+    "title": "Enquiry Commission on the Internet and Digital Society",
+    "publication": "German Bundestag (german)",
+    "format": "video",
+    "image": "src/cms/images/enquiry-commission-on-the-internet-and-digital-society_512x288.jpg",
+    "href": "https://www.bundestag.de/webarchiv/textarchiv/2010/31564797_kw39_pa_internetenquete-202840",
+    "type": "panel",
+    "year": 2010
+  }
+]
