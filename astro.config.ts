@@ -11,6 +11,10 @@ export default defineConfig({
   build: {
     assets: '_assets',
   },
+  image: {
+    responsiveStyles: true,
+    layout: 'constrained',
+  },
   experimental: {
     csp: true,
     contentIntellisense: true,
