@@ -11,6 +11,20 @@
 
 Website: [thomasaidancurran.com](https://thomasaidancurran.com)
 
+## To Do's
+
+-[ ] Fix type safety with [htmlBeautifier Plugin](https://github.com/bangkitdev/astro-html-beautifier/tree/main)
+
+-[ ]Add a [llms.txt file](https://llmstxt.org/)
+
+-[ ] Explore usage of [Astro Purge Css Plugin](https://github.com/codiume/orbit/tree/main/packages/astro-purgecss)
+
+-[ ] Explore usage of [Astro Compress Plugin](https://github.com/PlayForm/Compress)
+
+-[ ] Explore use case for [Astro Global Plugin](https://github.com/lilnasy/gratelets/tree/main/packages/global)
+
+-[ ] Explore [Link Checker Action](https://github.com/marketplace/actions/check-links-with-linkcheck)
+
 ## Installation
 
 ## Runtime

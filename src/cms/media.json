@@ -10,6 +10,16 @@
     "year": 2025
   },
   {
+    "slug": "ory-summit-2023-closing-remarks_",
+    "title": "Ory Summit 2023 Closing Remarks",
+    "publication": "Ory Summit",
+    "format": "video",
+    "image": "src/cms/images/ory-summit-2023-closing-remarks_720x404.jpg",
+    "href": "https://www.youtube.com/watch?v=V8rbWjYoZaM",
+    "type": "presentation",
+    "year": 2024
+  },
+  {
     "slug": "how-to-design-and-build-modern-open-source-software-in-go",
     "title": "How to design and build modern open source software in Go",
     "publication": "Google Developer Groups",
@@ -28,6 +38,16 @@
     "href": "https://www.horizont.net/medien/nachrichten/horizont-kongress-wie-der-ki-fluch-fuer-den-journalismus-zum-segen-werden-koennte-213079",
     "type": "panel",
     "year": 2023
+  },
+  {
+    "slug": "securing-the-digital-world",
+    "title": "Securing the digital world",
+    "publication": "Ory Summit",
+    "format": "video",
+    "image": "src/cms/images/securing-the-digital-world_480x270.jpg",
+    "href": "https://www.youtube.com/watch?v=wo7eZREQg9s",
+    "type": "presentation",
+    "year": 2022
   },
   {
     "slug": "ory-lands-22-5m-for-zero-trust-security-powered-by-open-source",
