@@ -105,7 +105,6 @@ export default defineConfig({
     // NOTE: Currently using a local shim until upstream fixes its export map.
     // TODO: Remove this when astro-html-beautifier is updated to support
     // TypeScript.
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     htmlBeautifier(),
   ],
   vite: {
