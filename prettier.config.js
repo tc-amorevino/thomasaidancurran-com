@@ -23,6 +23,7 @@ export default {
       options: {
         parser: 'astro',
         bracketSameLine: true,
+        singleAttributePerLine: true,
       },
     },
     {
