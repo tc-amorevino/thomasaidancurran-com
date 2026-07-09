@@ -11,11 +11,10 @@ const { class: className = defaultClass, ...attrs } = Astro.props;
 
 <div class={className} {...attrs}>
   <div class="canvas-outer flex grow flex-col border-t">
-    <div class="canvas-inner flex grow flex-col border-x bg-card p-[3px]">
-      <div class="grow rounded-xl border bg-white px-[11px] py-10">
+    <div class="canvas-inner bg-card flex grow flex-col border-x p-0.75">
+      <div class="grow rounded-xl border bg-white px-2.75 py-10">
         <article
-          class="prose prose-neutral max-w-none prose-headings:scroll-mt-32 prose-h1:text-xl prose-h1:font-bold prose-h2:text-xl prose-h2:font-semibold prose-h3:text-lg prose-h3:font-semibold prose-h4:text-base prose-h4:font-semibold"
-        >
+          class="prose prose-neutral prose-headings:scroll-mt-32 prose-h1:text-xl prose-h1:font-bold prose-h2:text-xl prose-h2:font-semibold prose-h3:text-lg prose-h3:font-semibold prose-h4:text-base prose-h4:font-semibold max-w-none">
           <slot name="post">
             <!-- cSpell:disable -->
             <h1>At vero eos et accusam</h1>

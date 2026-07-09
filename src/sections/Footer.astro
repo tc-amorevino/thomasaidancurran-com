@@ -8,23 +8,22 @@ const currentYear = new Date().getFullYear();
 <div class="canvas-outer bg-secondary">
   <div class="canvas-inner h-8 border-x"></div>
 </div>
-<footer class="canvas-outer border-t bg-secondary">
+<footer class="canvas-outer bg-secondary border-t">
   <div class="canvas-inner border-x">
     <div class="bg-stripes-diagonal flex justify-center gap-2 px-[7px] py-4">
       <div class="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
         <div class="flex flex-col gap-1">
           <div class="bg-secondary p-2">
-            <p class="text-sm font-semibold text-secondary-foreground">Site</p>
+            <p class="text-secondary-foreground text-sm font-semibold">Site</p>
           </div>
-          <div class="grow bg-secondary p-2">
+          <div class="bg-secondary grow p-2">
             <ul class="flex flex-col gap-2">
               {
                 footerLinksSite.map((link) => (
                   <li>
                     <Link
                       href={link.href}
-                      class="text-sm text-secondary-foreground underline underline-offset-4"
-                    >
+                      class="text-secondary-foreground text-sm underline underline-offset-4">
                       {link.title}
                     </Link>
                   </li>
@@ -35,11 +34,11 @@ const currentYear = new Date().getFullYear();
         </div>
         <div class="flex flex-col gap-1">
           <div class="bg-secondary p-2">
-            <p class="text-sm font-semibold text-secondary-foreground">
+            <p class="text-secondary-foreground text-sm font-semibold">
               Social
             </p>
           </div>
-          <div class="grow bg-secondary p-2">
+          <div class="bg-secondary grow p-2">
             <ul class="flex flex-col gap-2">
               {
                 footerLinksSocial.map((link) => (
@@ -49,9 +48,8 @@ const currentYear = new Date().getFullYear();
                       target={'_blank'}
                       rel="noopener"
                       title={`Connect with Thomas Aidan Curran on ${link.title}`}
-                      class="text-sm text-secondary-foreground underline underline-offset-4"
-                      classExternal="text-xs text-secondary-foreground/80"
-                    >
+                      class="text-secondary-foreground text-sm underline underline-offset-4"
+                      classExternal="text-xs text-secondary-foreground/80">
                       {link.title}
                     </Link>
                   </li>
@@ -65,9 +63,9 @@ const currentYear = new Date().getFullYear();
   </div>
 </footer>
 
-<div class="canvas-outer border-t bg-secondary">
-  <div class="canvas-inner border-x px-[15px] py-4">
-    <span class="text-xs text-secondary-foreground/80"
+<div class="canvas-outer bg-secondary border-t">
+  <div class="canvas-inner border-x px-3.75 py-4">
+    <span class="text-secondary-foreground/80 text-xs"
       >Copyright &copy; {currentYear} Thomas Aidan Curran</span
     >
   </div>
