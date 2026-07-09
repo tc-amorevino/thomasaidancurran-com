@@ -13,6 +13,9 @@ export default defineConfig({
     assets: '_assets',
   },
   image: {},
+  markdown: {
+    syntaxHighlight: false,
+  },
   security: {
     csp: {},
   },
