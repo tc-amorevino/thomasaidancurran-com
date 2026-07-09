@@ -6,7 +6,7 @@ import { defineCollection } from 'astro:content';
  * IMAGE PATHS IN JSON COLLECTIONS
  *
  * Image paths in JSON data files must be relative to the JSON file's own
- * directory, NOT the project root. This matches the documented behaviour for
+ * directory, NOT the project root. This matches the documented behavior for
  * Markdown frontmatter:
  * @see https://docs.astro.build/en/guides/images/#images-in-content-collections
  *
