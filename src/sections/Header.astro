@@ -11,19 +11,17 @@ const isActive = (link: (typeof headerLinksNav)[number]) => {
 };
 ---
 
-<header id="hidable-header" class="sticky top-0 z-10 border-y bg-card py-[3px]">
+<header id="hidable-header" class="bg-card sticky top-0 z-10 border-y py-[3px]">
   <div class="border-y bg-white">
-    <div class="canvas-outer bg-dotted overflow-visible bg-background/60">
+    <div class="canvas-outer bg-dotted bg-background/60 overflow-visible">
       <div class="canvas-inner flex flex-col gap-3 py-[11px]">
         <div
-          class="m-auto rounded-xl border border-border bg-white px-[11px] py-[7px]"
-        >
+          class="border-border m-auto rounded-xl border bg-white px-[11px] py-[7px]">
           <Logo />
         </div>
         <div class="scrollbar-hidden -mx-2 overflow-x-scroll px-2 sm:mr-0">
           <nav
-            class="m-auto w-min overflow-hidden rounded-full border border-border bg-white p-[3px]"
-          >
+            class="border-border m-auto w-min overflow-hidden rounded-full border bg-white p-[3px]">
             <ul class="flex flex-row flex-nowrap">
               {
                 headerLinksNav.map((link) => (
