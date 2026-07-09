@@ -68,7 +68,7 @@ const portfolioSchema = z.object({
   /** Link to the portfolio item */
   href: z.url(),
   /** Type of portfolio item */
-  type: z.enum(['advisor', 'angel investor', 'founder']),
+  type: z.enum(['advisor', 'angel investor', 'founder', 'member']),
 });
 
 const portfolio = defineCollection({
