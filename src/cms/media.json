@@ -1,5 +1,15 @@
 [
   {
+    "slug": "pre-dev-sovereign-ai-integration-with-nvidia-enterprise-ai-using-nvidias-gpu-h200-accelerated-infrastructure",
+    "title": "pre.dev sovereign AI integration with Nvidia Enterprise AI using Nvidia's GPU H200 accelerated infrastructure",
+    "publication": "pre.dev",
+    "format": "video",
+    "image": "./images/pre-dev-sovereign-ai-integration-with-nvidia-enterprise-ai-using-nvidias-gpu-h200-accelerated-infrastructure_814x458.png",
+    "href": "https://www.youtube.com/watch?v=7-OhvUt6_OY",
+    "type": "presentation",
+    "year": 2025
+  },
+  {
     "slug": "scaling-ai-startups-overcoming-challenges-building-for-the-future",
     "title": "Scaling AI startups: Overcoming Challenges & Building for the Future",
     "publication": "NVIDIA GTC",
@@ -50,12 +60,12 @@
     "year": 2022
   },
   {
-    "slug": "ory-lands-22-5m-for-zero-trust-security-powered-by-open-source",
-    "title": "Ory lands $22.5M for zero trust security powered by open source",
-    "publication": "VentureBeat",
+    "slug": "cloud-security-provider-ory-corp-raises-22-million-in-series-a-round-led-by-insight-partners",
+    "title": "Cloud-Security Provider Ory Corp Raises $22 Million in Series A Round Led by Insight Partners",
+    "publication": "Insight Partners",
     "format": "article",
-    "image": "./images/ory-lands-22-5m-for-zero-trust-security-powered-by-open-source_750x401.webp",
-    "href": "https://venturebeat.com/security/ory-lands-22-5m-for-zero-trust-security-powered-by-open-source/",
+    "image": "./images/cloud-security-provider-ory-corp-raises-22-million-in-series-a-round-led-by-insight-partners_750x401.webp",
+    "href": "https://www.insightpartners.com/ideas/cloud-security-provider-ory-corp-raises-22-million-in-series-a-round-led-by-insight-partners/",
     "type": "interview",
     "year": 2021
   },
