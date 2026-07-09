@@ -1,7 +1,6 @@
 import { file, glob } from 'astro/loaders';
-import { defineCollection, z } from 'astro:content';
-
-import { generateJsonSchema } from '@/lib/json-schema';
+import { z } from 'astro/zod';
+import { defineCollection } from 'astro:content';
 
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.mdx', base: './src/cms/blog' }),
@@ -19,7 +18,7 @@ const publicationsSchema = z.object({
   /** Image reference for the publication, 'src/cms/images/...' */
   image: z.string().optional(),
   /** Link to the publication */
-  href: z.string().url(),
+  href: z.url(),
   /** Year of publication in the format YYYY */
   year: z
     .number()
@@ -51,7 +50,7 @@ const portfolioSchema = z.object({
   /** Image reference for the portfolio item, 'src/cms/images/...' */
   image: z.string().optional(),
   /** Link to the portfolio item */
-  href: z.string().url(),
+  href: z.url(),
   /** Type of portfolio item */
   type: z.enum(['advisor', 'angel investor', 'founder']),
 });
@@ -79,7 +78,7 @@ const mediaSchema = z.object({
   /** Image reference for the media item, 'src/cms/images/...' */
   image: z.string().optional(),
   /** Link to the media item */
-  href: z.string().url(),
+  href: z.url(),
   /** Type of media item */
   type: z.enum(['interview', 'panel', 'commentary', 'presentation']),
   /** Year of media in the format YYYY */
@@ -101,8 +100,3 @@ const media = defineCollection({
 });
 
 export const collections = { blog, publications, portfolio, media };
-
-// Create a json schema for the collection, runs with 'npx astro sync'
-generateJsonSchema(publicationsSchema.array(), 'publications-schema.json');
-generateJsonSchema(portfolioSchema.array(), 'portfolio-schema.json');
-generateJsonSchema(mediaSchema.array(), 'media-schema.json');

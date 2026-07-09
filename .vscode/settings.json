@@ -52,18 +52,18 @@
 
   // JSON Schemas
   "json.schemas": [
-    // Astro content colleciton specific
+    // Astro content collection schemas (auto-generated)
     {
       "fileMatch": ["src/cms/publications.json"],
-      "url": "./src/.json-schemas/publications-schema.json"
+      "url": "./.astro/collections/publications.schema.json"
     },
     {
       "fileMatch": ["src/cms/portfolio.json"],
-      "url": "./src/.json-schemas/portfolio-schema.json"
+      "url": "./.astro/collections/portfolio.schema.json"
     },
     {
       "fileMatch": ["src/cms/media.json"],
-      "url": "./src/.json-schemas/media-schema.json"
+      "url": "./.astro/collections/media.schema.json"
     },
     // Project specific
     {
