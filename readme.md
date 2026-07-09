@@ -2,8 +2,8 @@
 <!-- markdown-link-check-disable-next-line -->
 <!-- markdown-link-check-disable -->
 
-![PR Open Checks](https://github.com/tc-amorevino/thomasaidancurran-com/actions/workflows/pr-opened.yml/badge.svg)
-![PR Closed Build](https://github.com/tc-amorevino/thomasaidancurran-com/actions/workflows/pr-merged.yml/badge.svg)
+![PR into Live / CI](https://github.com/tc-amorevino/thomasaidancurran-com/actions/workflows/pr-into-live.yml/badge.svg)
+![Push into Live / Deployment](https://github.com/tc-amorevino/thomasaidancurran-com/actions/workflows/push-into-live.yml/badge.svg)
 
 <!-- markdown-link-check-enable -->
 
