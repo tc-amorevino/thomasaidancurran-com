@@ -9,7 +9,6 @@ export default {
     'prettier-plugin-tailwindcss',
     'prettier-plugin-packagejson',
   ],
-  tailwindConfig: './tailwind.config.ts',
   tailwindFunctions: ['clsx', 'classnames', 'ctl'],
   singleQuote: true,
   semi: true,

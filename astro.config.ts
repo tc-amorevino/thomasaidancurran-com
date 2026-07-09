@@ -1,6 +1,6 @@
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig, fontProviders } from 'astro/config';
 import htmlBeautifier from 'astro-html-beautifier';
 
@@ -97,7 +97,6 @@ export default defineConfig({
   trailingSlash: 'always',
   scopedStyleStrategy: 'class',
   integrations: [
-    tailwind({ applyBaseStyles: false }),
     mdx(),
     sitemap(),
     // NOTE: Currently using a local shim until upstream fixes its export map.
@@ -106,4 +105,7 @@ export default defineConfig({
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     htmlBeautifier(),
   ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

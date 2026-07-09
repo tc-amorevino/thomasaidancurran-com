@@ -1,5 +1,5 @@
 ---
-import '@/styles/base.css';
+import '@/styles/global.css';
 
 import { Font } from 'astro:assets';
 
@@ -45,12 +45,11 @@ const robots = [
     <!-- Site Icons: Start -->
     <link
       rel="icon"
-      type="image/png"
-      href="/favicon/favicon-96x96.png"
-      sizes="96x96"
+      type="image/svg+xml"
+      href="/favicon/favicon.svg"
+      sizes="any"
     />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" sizes="48x48" />
     <!-- Site Icons: End -->
 
     <!-- Site Metadata: Start -->
@@ -95,8 +94,8 @@ const robots = [
     <meta name="viewport" content="width=device-width" />
     <slot name="head" />
   </head>
-  <body class="min-h-screen bg-muted">
-    <div id="canvas" class="flex min-h-screen flex-col bg-background">
+  <body class="bg-muted min-h-screen">
+    <div id="canvas" class="bg-background flex min-h-screen flex-col">
       <Header />
       <main class="flex grow flex-col">
         <slot name="main" />

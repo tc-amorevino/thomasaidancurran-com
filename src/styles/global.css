@@ -1,0 +1,159 @@
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+@plugin 'tailwindcss-animate';
+
+/* ============================================================
+   RAW DESIGN TOKENS
+   ============================================================ */
+
+:root {
+  /* Color tokens (HSL channel values — used via hsl(var(--*))) */
+  --background: 72 50% 96%; /* #F8FAF0 */
+  --foreground: 100 12% 10%; /* #191D17 */
+  --card: 83 19% 87%; /* #DFE4D7 */
+  --card-foreground: 93 7% 26%; /* #43483F */
+  --popover: 96 38% 85%; /* #D7E8CC */
+  --popover-foreground: 106 38% 9%; /* #121F0E */
+  --primary: 105 33% 31%; /* #416834 */
+  --primary-foreground: 0 0% 100%; /* #FFFFFF */
+  --secondary: 100 12% 34%; /* #54624D */
+  --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+  --muted: 102 67% 81%; /* #C2EFAE */
+  --muted-foreground: 115 100% 6%; /* #032100 */
+  --accent: 36 76% 29%; /* #815512 */
+  --accent-foreground: 0 0% 100%; /* #FFFFFF */
+  --destructive: 0 100% 30%; /* #BA1A1A */
+  --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+  --border: 94 5% 45%; /* #73796E */
+  --input: 85 10% 76%; /* #C3C8BC */
+  --ring: 34 88% 70%; /* #F6BC70 */
+
+  --radius: 0.25rem;
+}
+
+/* ============================================================
+   TAILWIND THEME ALIASES
+   Maps CSS variables into Tailwind's token namespace so that
+   utility classes like bg-background, text-primary etc. work.
+   ============================================================ */
+
+@theme {
+  /* Font family aliases — populated by Astro's Font component at build time */
+  --font-sans: var(--font-notosans);
+  --font-mono: var(--font-notosansmono);
+  --font-condensed: var(--font-notosanscondensed);
+}
+
+@theme inline {
+  /* Color aliases */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  /* Border radius aliases */
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) * 2);
+}
+
+/* ============================================================
+   CUSTOM UTILITIES
+   ============================================================ */
+
+@utility scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+@utility bg-stripes-diagonal {
+  background-image: repeating-linear-gradient(
+    315deg,
+    hsl(var(--border)) 0,
+    hsl(var(--border)) 1px,
+    transparent 0,
+    transparent 50%
+  );
+  background-size: 10px 10px;
+}
+
+@utility bg-dotted {
+  background-image: radial-gradient(hsl(var(--border) / 30%) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+@utility grid-background {
+  background-size: 2rem 2rem;
+  background-image:
+    linear-gradient(to right, hsl(var(--card) / 60%) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--card) / 60%) 1px, transparent 1px);
+  background-position: -1rem -1rem;
+}
+
+/* ============================================================
+   BASE LAYER
+   ============================================================ */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    @apply selection:bg-muted selection:text-muted-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+
+  /* Heading defaults */
+  h1 {
+    @apply text-xl font-bold;
+  }
+  h2 {
+    @apply text-xl font-semibold;
+  }
+  h3 {
+    @apply text-lg font-semibold;
+  }
+  h4 {
+    @apply text-base font-semibold;
+  }
+  h5 {
+    @apply text-base font-medium;
+  }
+  h6 {
+    @apply text-sm font-medium;
+  }
+
+  /* Canvas layout helpers */
+  .canvas-outer {
+    @apply px-2;
+  }
+  .canvas-inner {
+    @apply mx-auto w-full max-w-screen-md;
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
