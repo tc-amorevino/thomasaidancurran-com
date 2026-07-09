@@ -99,14 +99,7 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'always',
   scopedStyleStrategy: 'class',
-  integrations: [
-    mdx(),
-    sitemap(),
-    // NOTE: Currently using a local shim until upstream fixes its export map.
-    // TODO: Remove this when astro-html-beautifier is updated to support
-    // TypeScript.
-    htmlBeautifier(),
-  ],
+  integrations: [mdx(), sitemap(), htmlBeautifier()],
   vite: {
     plugins: [tailwindcss()],
   },
