@@ -10,7 +10,9 @@ import Post from '@/sections/Post.astro';
 
 const Content = MediaIntro.Content;
 
-const media = await getCollection('media');
+const media = (await getCollection('media')).sort(
+  (a, b) => b.data.year - a.data.year,
+);
 
 const seo: SeoValidate = {
   page_title: 'Interviews & Videos on AI & Tech by Thomas Aidan Curran',
@@ -26,7 +28,9 @@ const seo: SeoValidate = {
 ---
 
 <LayoutMain seo={seo}>
-  <div slot="main" class="-mt-px flex grow flex-col">
+  <div
+    slot="main"
+    class="-mt-px flex grow flex-col">
     <div class="canvas-outer border-t">
       <div class="canvas-inner o h-8 border-x"></div>
     </div>
@@ -67,7 +71,9 @@ const seo: SeoValidate = {
                   )}
                 </div>
                 <p>
-                  <Link target={'_blank'} href={media.data.href}>
+                  <Link
+                    target={'_blank'}
+                    href={media.data.href}>
                     {`${media.data.format === 'article' ? 'Read' : 'Watch'} ${media.data.format}`}
                   </Link>
                 </p>
