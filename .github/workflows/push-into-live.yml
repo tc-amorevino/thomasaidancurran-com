@@ -1,8 +1,12 @@
-name: CI on PR Merged
+name: 'Push into Live / Deployment'
 on:
   push:
     branches: [live]
   workflow_dispatch:
+
+concurrency:
+  group: deployment
+  cancel-in-progress: true
 
 permissions:
   contents: read

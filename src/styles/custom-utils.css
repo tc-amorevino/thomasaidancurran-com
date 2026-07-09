@@ -1,9 +1,0 @@
-.scrollbar-hidden {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
-}

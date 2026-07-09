@@ -1,8 +1,8 @@
-name: CI on PR Opened
+name: 'PR into Live'
 on:
   pull_request:
     branches: [live]
-    types: [opened, reopened]
+    types: [opened, reopened, synchronize]
   workflow_dispatch:
 
 jobs:

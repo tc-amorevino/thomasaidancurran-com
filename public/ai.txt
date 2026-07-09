@@ -10,6 +10,7 @@ Allow: *.ico
 Allow: *.jpeg
 Allow: *.jpg
 Allow: *.png
+Allow: *.avif
 Allow: *.svg
 Allow: *.webp
 Allow: *.m4a

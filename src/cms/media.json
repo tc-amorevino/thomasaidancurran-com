@@ -1,10 +1,20 @@
 [
   {
+    "slug": "pre-dev-sovereign-ai-integration-with-nvidia-enterprise-ai-using-nvidias-gpu-h200-accelerated-infrastructure",
+    "title": "pre.dev sovereign AI integration with Nvidia Enterprise AI using Nvidia's GPU H200 accelerated infrastructure",
+    "publication": "pre.dev",
+    "format": "video",
+    "image": "./images/pre-dev-sovereign-ai-integration-with-nvidia-enterprise-ai-using-nvidias-gpu-h200-accelerated-infrastructure_814x458.png",
+    "href": "https://www.youtube.com/watch?v=7-OhvUt6_OY",
+    "type": "presentation",
+    "year": 2025
+  },
+  {
     "slug": "scaling-ai-startups-overcoming-challenges-building-for-the-future",
     "title": "Scaling AI startups: Overcoming Challenges & Building for the Future",
     "publication": "NVIDIA GTC",
     "format": "video",
-    "image": "src/cms/images/scaling-ai-startups-overcoming-challenges-building-for-the-future_300x168.jpg",
+    "image": "./images/scaling-ai-startups-overcoming-challenges-building-for-the-future_300x168.jpg",
     "href": "https://www.nvidia.com/en-us/on-demand/session/gtc25-s74253/",
     "type": "panel",
     "year": 2025
@@ -14,7 +24,7 @@
     "title": "Ory Summit 2023 Closing Remarks",
     "publication": "Ory Summit",
     "format": "video",
-    "image": "src/cms/images/ory-summit-2023-closing-remarks_720x404.jpg",
+    "image": "./images/ory-summit-2023-closing-remarks_720x404.avif",
     "href": "https://www.youtube.com/watch?v=V8rbWjYoZaM",
     "type": "presentation",
     "year": 2024
@@ -24,7 +34,7 @@
     "title": "How to design and build modern open source software in Go",
     "publication": "Google Developer Groups",
     "format": "video",
-    "image": "src/cms/images/how-to-design-and-build-modern-open-source-software-in-go_299x168.jpg",
+    "image": "./images/how-to-design-and-build-modern-open-source-software-in-go_299x168.jpg",
     "href": "https://www.youtube.com/watch?v=IWDlVSSdKC8",
     "type": "presentation",
     "year": 2023
@@ -34,7 +44,7 @@
     "title": "How the AI curse could become a blessing for journalism",
     "publication": "Horizont Kongress (german)",
     "format": "article",
-    "image": "src/cms/images/how-the-ai-curse-could-become-a-blessing-for-journalism_940x529.jpg",
+    "image": "./images/how-the-ai-curse-could-become-a-blessing-for-journalism_940x529.jpg",
     "href": "https://www.horizont.net/medien/nachrichten/horizont-kongress-wie-der-ki-fluch-fuer-den-journalismus-zum-segen-werden-koennte-213079",
     "type": "panel",
     "year": 2023
@@ -44,18 +54,18 @@
     "title": "Securing the digital world",
     "publication": "Ory Summit",
     "format": "video",
-    "image": "src/cms/images/securing-the-digital-world_480x270.jpg",
+    "image": "./images/securing-the-digital-world_480x270.avif",
     "href": "https://www.youtube.com/watch?v=wo7eZREQg9s",
     "type": "presentation",
     "year": 2022
   },
   {
-    "slug": "ory-lands-22-5m-for-zero-trust-security-powered-by-open-source",
-    "title": "Ory lands $22.5M for zero trust security powered by open source",
-    "publication": "VentureBeat",
+    "slug": "cloud-security-provider-ory-corp-raises-22-million-in-series-a-round-led-by-insight-partners",
+    "title": "Cloud-Security Provider Ory Corp Raises $22 Million in Series A Round Led by Insight Partners",
+    "publication": "Insight Partners",
     "format": "article",
-    "image": "src/cms/images/ory-lands-22-5m-for-zero-trust-security-powered-by-open-source_750x401.jpg",
-    "href": "https://venturebeat.com/security/ory-lands-22-5m-for-zero-trust-security-powered-by-open-source/",
+    "image": "./images/cloud-security-provider-ory-corp-raises-22-million-in-series-a-round-led-by-insight-partners_750x401.webp",
+    "href": "https://www.insightpartners.com/ideas/cloud-security-provider-ory-corp-raises-22-million-in-series-a-round-led-by-insight-partners/",
     "type": "interview",
     "year": 2021
   },
@@ -64,7 +74,7 @@
     "title": "Intersource is GitHub culture and open source principles",
     "publication": "GitHub Satellite",
     "format": "video",
-    "image": "src/cms/images/intersource-is-github-culture-and-open-source-principles_300x188.jpg",
+    "image": "./images/intersource-is-github-culture-and-open-source-principles_300x188.avif",
     "href": "https://www.youtube.com/watch?v=Kg3k_K65J5o",
     "type": "presentation",
     "year": 2019
@@ -74,7 +84,7 @@
     "title": "Cloud Migration Means Transformation at Deutsche Börse Group",
     "publication": "AWS Summit",
     "format": "video",
-    "image": "src/cms/images/cloud-migration-means-transformation-at-deutsche-boerse-group_720x404.jpg",
+    "image": "./images/cloud-migration-means-transformation-at-deutsche-boerse-group_720x404.avif",
     "href": "https://www.youtube.com/watch?v=jQzAKh8OcFE",
     "type": "presentation",
     "year": 2018
@@ -84,7 +94,7 @@
     "title": "Developer Platform GitHub: In the Sign of the Octocat",
     "publication": "Tagesspiegel (german)",
     "format": "article",
-    "image": "src/cms/images/developer-platform-github-in-the-sign-of-the-octocat_1000x428.jpg",
+    "image": "./images/developer-platform-github-in-the-sign-of-the-octocat_1000x428.jpg",
     "href": "https://www.tagesspiegel.de/wirtschaft/im-zeichen-der-krakenkatze-5535355.html",
     "type": "commentary",
     "year": 2018
@@ -94,7 +104,7 @@
     "title": "Google Cloud Summit Munich Keynote",
     "publication": "Google Cloud Summit",
     "format": "video",
-    "image": "src/cms/images/google-cloud-summit-munich-keynote_600x300.jpg",
+    "image": "./images/google-cloud-summit-munich-keynote_600x300.webp",
     "href": "https://www.youtube.com/watch?v=sm3xLN0n95o&t=2910s",
     "type": "panel",
     "year": 2017
@@ -104,7 +114,7 @@
     "title": "The man for whom the Deutsche Börse was too slow (german)",
     "publication": "Welt (german)",
     "format": "article",
-    "image": "src/cms/images/the-man-for-whom-the-deutsche-boerse-was-too-slow_300x168.jpg",
+    "image": "./images/the-man-for-whom-the-deutsche-boerse-was-too-slow_300x168.jpg",
     "href": "https://www.welt.de/wirtschaft/plus169609106/Deutsche-Boerse-Thomas-Curran-digitalisiert-den-Konzern.html",
     "type": "interview",
     "year": 2017
@@ -114,7 +124,7 @@
     "title": "Silicon Valley Insider: This development is set to decisively change your daily life",
     "publication": "Welt (german)",
     "format": "article",
-    "image": "src/cms/images/silicon-valley-insider-this-development-is-set-to-decisively-change-your-daily-life_2000x1333.jpg",
+    "image": "./images/silicon-valley-insider-this-development-is-set-to-decisively-change-your-daily-life_2000x1333.png",
     "href": "https://www.welt.de/kmpkt/article170168893/Diese-Entwicklung-soll-deinen-Alltag-entscheidend-veraendern.html",
     "type": "commentary",
     "year": 2017
@@ -124,7 +134,7 @@
     "title": "Unlocking IOT's Potential in Open Education",
     "publication": "webit",
     "format": "video",
-    "image": "src/cms/images/unlocking-iots-potential-in-open-education_480x270.jpg",
+    "image": "./images/unlocking-iots-potential-in-open-education_480x270.avif",
     "href": "https://www.youtube.com/watch?v=AT6TBhfxYFc",
     "type": "presentation",
     "year": 2014
@@ -134,7 +144,7 @@
     "title": "CTO Design Challenge: Privacy vs. Security: Finding a Technology Solution",
     "publication": "FiRe: Future in Review",
     "format": "video",
-    "image": "src/cms/images/cto-design-challenge-privacy-vs-security-finding-a-technology-solution_720x404.jpg",
+    "image": "./images/cto-design-challenge-privacy-vs-security-finding-a-technology-solution_720x404.avif",
     "href": "https://www.youtube.com/watch?v=h2rXjqdQtTE",
     "type": "panel",
     "year": 2014
@@ -144,7 +154,7 @@
     "title": "CTO Design Challenge: Scaling Alternative Energy: How Can It Be Done?",
     "publication": "FiRe: Future in Review",
     "format": "video",
-    "image": "src/cms/images/cto-design-challenge-scaling-alternative-energy-how-can-it-be-done_336x188.jpg",
+    "image": "./images/cto-design-challenge-scaling-alternative-energy-how-can-it-be-done_336x188.avif",
     "href": "https://www.youtube.com/watch?v=V7sv9BSeYhc",
     "type": "panel",
     "year": 2010
@@ -154,7 +164,7 @@
     "title": "Broadband",
     "publication": "DLD Conference",
     "format": "video",
-    "image": "src/cms/images/broadband_336x188.jpg",
+    "image": "./images/broadband_336x188.avif",
     "href": "https://www.youtube.com/watch?v=fvoIi2ZOU8s",
     "type": "panel",
     "year": 2010
@@ -164,7 +174,7 @@
     "title": "Enquiry Commission on the Internet and Digital Society",
     "publication": "German Bundestag (german)",
     "format": "video",
-    "image": "src/cms/images/enquiry-commission-on-the-internet-and-digital-society_512x288.jpg",
+    "image": "./images/enquiry-commission-on-the-internet-and-digital-society_512x288.jpg",
     "href": "https://www.bundestag.de/webarchiv/textarchiv/2010/31564797_kw39_pa_internetenquete-202840",
     "type": "panel",
     "year": 2010

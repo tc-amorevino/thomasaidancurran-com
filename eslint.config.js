@@ -6,65 +6,50 @@
 // Plugins
 import eslint from '@eslint/js';
 import astroParser from 'astro-eslint-parser';
+import { defineConfig } from 'eslint/config';
 import astro from 'eslint-plugin-astro';
 import jsdoc from 'eslint-plugin-jsdoc';
 import * as mdx from 'eslint-plugin-mdx';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
-import tailwindcss from 'eslint-plugin-tailwindcss';
 import globals from 'globals';
 import typescriptEslint from 'typescript-eslint';
-
-// export default typescriptEslint.config(
-export default typescriptEslint.config(
+export default defineConfig(
   // Ignores
   {
-    ignores: [
-      'dist/',
-      '.astro/',
-      '**/**/node_modules',
-      '**/.github',
-      '**/*.mdx/**.ts', // remove maybe
-    ],
+    ignores: ['dist/', '.astro/'],
   },
-  // JavaScript/ TypeScript config
+  // JavaScript / TypeScript config
   {
-    files: ['**/*.{js,ts}'], //
+    files: ['**/*.{js,ts,jsx,tsx}'], //
     extends: [
       eslint.configs.recommended,
       typescriptEslint.configs.recommendedTypeChecked,
-      typescriptEslint.configs.eslintRecommended,
     ],
   },
-
   // Code Style config
   {
-    extends: [tailwindcss.configs['flat/recommended']],
     plugins: {
       'simple-import-sort': simpleImportSort,
     },
     rules: {
-      'simple-import-sort/imports': 'error',
-      'tailwindcss/no-custom-classname': 'off',
-      'simple-import-sort/exports': 'error',
+      'simple-import-sort/imports': 'warn',
+      'simple-import-sort/exports': 'warn',
     },
   },
-
   // JSDoc config
   {
-    files: ['**/*.{js,ts}'],
-    extends: [jsdoc.configs['flat/recommended-typescript-error']],
+    files: ['**/*.{js,ts,jsx,tsx}'],
+    extends: [jsdoc.configs['flat/recommended-typescript']],
   },
-
   // Javascript / Typescript Custom config
   {
-    files: ['**/*.{js,ts}'],
+    files: ['**/*.{js,ts,jsx,tsx}'],
     languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
       sourceType: 'module',
       ecmaVersion: 'latest',
+      globals: {
+        ...globals.browser,
+      },
       parser: typescriptEslint.parser,
       parserOptions: {
         project: ['./tsconfig.json'],
@@ -72,7 +57,6 @@ export default typescriptEslint.config(
       },
     },
   },
-
   // TypeScript Definitions config
   {
     files: ['**/*.d.ts'],
@@ -80,15 +64,16 @@ export default typescriptEslint.config(
       '@typescript-eslint/triple-slash-reference': 'off',
     },
   },
-
   // Astro Framework config
   {
     files: ['**/*.astro'],
+    rules: {
+      '@typescript-eslint/no-misused-promises': 'off',
+    },
     extends: [
       eslint.configs.recommended,
       typescriptEslint.configs.recommendedTypeChecked,
       astro.configs.recommended,
-      typescriptEslint.configs.eslintRecommended,
     ],
     languageOptions: {
       parser: astroParser,
@@ -96,6 +81,7 @@ export default typescriptEslint.config(
         parser: typescriptEslint.parser,
         extraFileExtensions: ['.astro'],
         project: ['./tsconfig.json'],
+        tsconfigRootDir: import.meta.dirname,
       },
     },
   },

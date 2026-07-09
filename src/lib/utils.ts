@@ -1,4 +1,4 @@
-import { z } from 'astro:schema';
+import { z } from 'astro/zod';
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -17,10 +17,10 @@ export function cn(...inputs: ClassValue[]) {
  * This function validates a given URL using the zod library.
  * @param href The URL to be validated.
  * @returns The validated URL object.
- * @throws An error if the URL is invalid.
+ * @throws {Error} An error if the URL is invalid.
  */
 export function validateHref(href: unknown) {
-  const hrefSchema = z.string().url();
+  const hrefSchema = z.url();
   const result = hrefSchema.safeParse(href);
   if (!result.success) {
     const input = String(href) || 'unknown';
@@ -33,7 +33,7 @@ export function validateHref(href: unknown) {
  * This function validates a given site URL and returns a URL object.
  * @param site - The site URL to be validated.
  * @returns The validated URL object.
- * @throws An error if the site URL is invalid or not provided.
+ * @throws {Error} An error if the site URL is invalid or not provided.
  */
 export function getSiteUrl(site?: URL) {
   if (!site) {
@@ -46,7 +46,8 @@ export function getSiteUrl(site?: URL) {
  * This function extracts the domain from a given URL.
  * @param url The URL object from which to extract the domain.
  * @returns The domain as a string.
- * @throws An error if the URL does not contain at least one dot in the domain.
+ * @throws {Error} An error if the URL does not contain at least one dot in the
+ * domain.
  * @example 'https://www.example.com' => 'example.com'
  */
 export function getDomain(url: URL) {
@@ -68,14 +69,21 @@ export function getDomain(url: URL) {
  * It checks the page title, description, robots directives, and canonical URL.
  * @returns An object containing the validated SEO data or throws an error if
  * validation fails.
+ * @throws {Error} An error if the SEO data is invalid.
  */
 const _seoValidate = z.object({
-  /** The title of the current page that appears in the browser tab and search results, max. 60 characters */
+  /**
+   * The title of the current page that appears in the browser tab and search
+   * results, max. 60 characters
+   */
   page_title: z
     .string()
     .min(1, 'Page title is required')
     .max(60, 'The page title cannot exceed 60 characters'),
-  /** The description of the current page that appears in search results, max. 160 characters */
+  /**
+   * The description of the current page that appears in search results, max.
+   * 160 characters
+   */
   page_description: z
     .string()
     .min(1, 'Page description is required')
@@ -85,7 +93,7 @@ const _seoValidate = z.object({
   /** Whether links on the page should not be followed by search engine crawlers */
   robots_nofollow: z.boolean().default(false).optional(),
   /** The canonical URL of the page, _with trailing slash_ */
-  canonical_url: z.string().url().min(1, 'Canonical URL is required'),
+  canonical_url: z.url().min(1, 'Canonical URL is required'),
 });
 
 /** The SEO validation schema */
@@ -97,12 +105,12 @@ export type SeoValidate = z.infer<typeof _seoValidate>;
  * error with a message detailing the validation issues.
  * @param data The data to be validated against the SEO schema.
  * @returns The validated SEO data.
- * @throws An error if the data does not conform to the SEO schema.
+ * @throws {Error} An error if the data does not conform to the SEO schema.
  */
 export function seoValidation(data: unknown): SeoValidate {
   const result = _seoValidate.safeParse(data);
   if (!result.success) {
-    const errors = result.error.errors.map((e) => e.message).join(', ');
+    const errors = result.error.issues.map((e) => e.message).join(', ');
     throw new Error(`${errors}`);
   }
   return result.data;

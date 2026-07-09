@@ -2,28 +2,14 @@
 <!-- markdown-link-check-disable-next-line -->
 <!-- markdown-link-check-disable -->
 
-![PR Open Checks](https://github.com/tc-amorevino/thomasaidancurran-com/actions/workflows/pr-opened.yml/badge.svg)
-![PR Closed Build](https://github.com/tc-amorevino/thomasaidancurran-com/actions/workflows/pr-merged.yml/badge.svg)
+![PR into Live / CI](https://github.com/tc-amorevino/thomasaidancurran-com/actions/workflows/pr-into-live.yml/badge.svg)
+![Push into Live / Deployment](https://github.com/tc-amorevino/thomasaidancurran-com/actions/workflows/push-into-live.yml/badge.svg)
 
 <!-- markdown-link-check-enable -->
 
 # thomasaidancurran.com official website repo
 
 Website: [thomasaidancurran.com](https://thomasaidancurran.com)
-
-## To Do's
-
--[ ] Fix type safety with [htmlBeautifier Plugin](https://github.com/bangkitdev/astro-html-beautifier/tree/main)
-
--[ ]Add a [llms.txt file](https://llmstxt.org/)
-
--[ ] Explore usage of [Astro Purge Css Plugin](https://github.com/codiume/orbit/tree/main/packages/astro-purgecss)
-
--[ ] Explore usage of [Astro Compress Plugin](https://github.com/PlayForm/Compress)
-
--[ ] Explore use case for [Astro Global Plugin](https://github.com/lilnasy/gratelets/tree/main/packages/global)
-
--[ ] Explore [Link Checker Action](https://github.com/marketplace/actions/check-links-with-linkcheck)
 
 ## Installation
 
@@ -72,6 +58,12 @@ Before creating a pull request, increment the project versions in the [`package.
 "version": "1.0.0",
 
 ```
+
+### Content Collections
+
+JSON content collections are associated with their generated Astro schemas in the
+[`.vscode/settings.json`](./.vscode/settings.json) file. If a new JSON collection is added in future, add a matching
+schema association there to retain IDE IntelliSense.
 
 ### Linting, Code Style & Spell Checking
 

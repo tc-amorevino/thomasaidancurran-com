@@ -22,12 +22,13 @@ const seo: SeoValidate = {
 /**
  * Edit the publications page text here:
  * {@link src/cms/blocks/publications.mdx}
- * {@link src/.json-schemas/publications-schema.json}
  */
 ---
 
 <LayoutMain seo={seo}>
-  <div slot="main" class="-mt-px flex grow flex-col">
+  <div
+    slot="main"
+    class="-mt-px flex grow flex-col">
     <div class="canvas-outer border-t">
       <div class="canvas-inner o h-8 border-x"></div>
     </div>
@@ -40,8 +41,7 @@ const seo: SeoValidate = {
     <div class="canvas-outer border-t">
       <div class="canvas-inner border-x">
         <div
-          class="grid auto-rows-fr grid-cols-1 gap-px bg-border md:grid-cols-2"
-        >
+          class="bg-border grid auto-rows-fr grid-cols-1 gap-px md:grid-cols-2">
           {
             publications.map((publication, i) => (
               <div class="flex flex-col justify-between bg-white p-6">
@@ -58,13 +58,15 @@ const seo: SeoValidate = {
                       />
                     )}
                   </div>
-                  <p class="mb-2 font-mono text-xs tracking-wider text-foreground/80">
+                  <p class="text-foreground/80 mb-2 font-mono text-xs tracking-wider">
                     [{publication.data.type}, {publication.data.year}]
                   </p>
                   <p class="font-medium">{publication.data.title}</p>
                 </div>
                 <p>
-                  <Link target={'_blank'} href={publication.data.href}>
+                  <Link
+                    target={'_blank'}
+                    href={publication.data.href}>
                     Read
                   </Link>
                 </p>

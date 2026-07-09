@@ -26,10 +26,16 @@ const rootDomain = getDomain(getSiteUrl(Astro.site));
 const isExternal = hrefDomain !== rootDomain;
 ---
 
-<a href={hrefUrl} {...attrs} class={className}
+<a
+  href={hrefUrl}
+  {...attrs}
+  class={className}
   ><slot />{
     isExternal && (
-      <span class={classExternal} set:text={` [↗ ${hrefDomain}]`} />
+      <span
+        class={classExternal}
+        set:text={` [↗ ${hrefDomain}]`}
+      />
     )
   }</a
 >

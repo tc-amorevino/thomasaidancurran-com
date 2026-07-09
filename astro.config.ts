@@ -1,7 +1,7 @@
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import tailwind from '@astrojs/tailwind';
-import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
+import { defineConfig, fontProviders } from 'astro/config';
 import htmlBeautifier from 'astro-html-beautifier';
 
 export default defineConfig({
@@ -13,15 +13,19 @@ export default defineConfig({
     assets: '_assets',
   },
   image: {},
-  experimental: {
-    csp: true,
-    contentIntellisense: true,
-    fonts: [
-      {
-        provider: 'local',
-        name: 'NotoSans',
-        cssVariable: '--font-notosans',
-        fallbacks: ['sans-serif'],
+  markdown: {
+    syntaxHighlight: false,
+  },
+  security: {
+    csp: {},
+  },
+  fonts: [
+    {
+      provider: fontProviders.local(),
+      name: 'NotoSans',
+      cssVariable: '--font-notosans',
+      fallbacks: ['sans-serif'],
+      options: {
         variants: [
           {
             src: [
@@ -30,7 +34,7 @@ export default defineConfig({
                 tech: 'variations',
               },
             ],
-            weight: '300 400 500 600 700',
+            weight: '300 700',
             style: 'normal',
             display: 'swap',
           },
@@ -41,17 +45,19 @@ export default defineConfig({
                 tech: 'variations',
               },
             ],
-            weight: '300 400 500 600 700',
+            weight: '300 700',
             style: 'italic',
             display: 'swap',
           },
         ],
       },
-      {
-        provider: 'local',
-        name: 'NotoSansCondensed',
-        cssVariable: '--font-notosanscondensed',
-        fallbacks: ['sans-serif'],
+    },
+    {
+      provider: fontProviders.local(),
+      name: 'NotoSansCondensed',
+      cssVariable: '--font-notosanscondensed',
+      fallbacks: ['sans-serif'],
+      options: {
         variants: [
           {
             src: [
@@ -60,18 +66,20 @@ export default defineConfig({
                 tech: 'variations',
               },
             ],
-            weight: '200 400 600 ',
+            weight: '200 600 ',
             style: 'normal',
             display: 'swap',
             variationSettings: "'wdth' 75",
           },
         ],
       },
-      {
-        provider: 'local',
-        name: 'NotoSansMono',
-        cssVariable: '--font-notosansmono',
-        fallbacks: ['monospace'],
+    },
+    {
+      provider: fontProviders.local(),
+      name: 'NotoSansMono',
+      cssVariable: '--font-notosansmono',
+      fallbacks: ['monospace'],
+      options: {
         variants: [
           {
             src: [
@@ -80,23 +88,19 @@ export default defineConfig({
                 tech: 'variations',
               },
             ],
-            weight: '300 400 500 600 700',
+            weight: '300 700',
             style: 'normal',
             display: 'swap',
           },
         ],
       },
-    ],
-  },
+    },
+  ],
   output: 'static',
   trailingSlash: 'always',
   scopedStyleStrategy: 'class',
-  integrations: [
-    tailwind({ applyBaseStyles: false }),
-    mdx(),
-    sitemap(),
-    // To DO: Remove this when astro-html-beautifier is updated to support TypeScript
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    htmlBeautifier(),
-  ],
+  integrations: [mdx(), sitemap(), htmlBeautifier()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
