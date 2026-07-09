@@ -9,7 +9,9 @@ const defaultClass = 'flex grow flex-col';
 const { class: className = defaultClass, ...attrs } = Astro.props;
 ---
 
-<div class={className} {...attrs}>
+<div
+  class={className}
+  {...attrs}>
   <div class="canvas-outer flex grow flex-col border-t">
     <div class="canvas-inner bg-card flex grow flex-col border-x p-0.75">
       <div class="grow rounded-xl border bg-white px-2.75 py-10">

@@ -33,13 +33,21 @@ const robots = [
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html
+  lang="en"
+  class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
 
     <!-- Site Fonts: Start -->
-    <Font cssVariable="--font-notosans" preload />
-    <Font cssVariable="--font-notosansmono" preload />
+    <Font
+      cssVariable="--font-notosans"
+      preload
+    />
+    <Font
+      cssVariable="--font-notosansmono"
+      preload
+    />
     <!-- Site Fonts: End -->
 
     <!-- Site Icons: Start -->
@@ -49,14 +57,31 @@ const robots = [
       href="/favicon/favicon.svg"
       sizes="any"
     />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" sizes="48x48" />
+    <link
+      rel="shortcut icon"
+      href="/favicon/favicon.ico"
+      sizes="48x48"
+    />
     <!-- Site Icons: End -->
 
     <!-- Site Metadata: Start -->
     <title>{seo.page_title}</title>
-    <meta name="description" content={seo.page_description} />
-    <link rel="canonical" href={seo.canonical_url} />
-    {robots && <meta name="robots" content={robots} />}
+    <meta
+      name="description"
+      content={seo.page_description}
+    />
+    <link
+      rel="canonical"
+      href={seo.canonical_url}
+    />
+    {
+      robots && (
+        <meta
+          name="robots"
+          content={robots}
+        />
+      )
+    }
     <!-- Site Metadata: End -->
 
     <!-- Site JSON LD: Start -->
@@ -91,11 +116,16 @@ const robots = [
     </script>
     <!-- Site JSON LD: End -->
 
-    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
     <slot name="head" />
   </head>
   <body class="bg-muted min-h-screen">
-    <div id="canvas" class="bg-background flex min-h-screen flex-col">
+    <div
+      id="canvas"
+      class="bg-background flex min-h-screen flex-col">
       <Header />
       <main class="flex grow flex-col">
         <slot name="main" />

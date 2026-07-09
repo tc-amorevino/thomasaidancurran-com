@@ -26,7 +26,9 @@ const seo: SeoValidate = {
 ---
 
 <LayoutMain seo={seo}>
-  <div slot="main" class="-mt-px flex grow flex-col">
+  <div
+    slot="main"
+    class="-mt-px flex grow flex-col">
     <div class="canvas-outer border-t">
       <div class="canvas-inner o h-8 border-x"></div>
     </div>
@@ -62,7 +64,9 @@ const seo: SeoValidate = {
                   <p class="font-medium">{publication.data.title}</p>
                 </div>
                 <p>
-                  <Link target={'_blank'} href={publication.data.href}>
+                  <Link
+                    target={'_blank'}
+                    href={publication.data.href}>
                     Read
                   </Link>
                 </p>
