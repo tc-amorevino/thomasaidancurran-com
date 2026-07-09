@@ -32,7 +32,7 @@ const publicationsSchema = z.object({
 const publications = defineCollection({
   loader: file('src/cms/publications.json'),
   schema: ({ image }) =>
-    publicationsSchema.merge(
+    publicationsSchema.extend(
       z.object({
         image: image().optional(),
       }),
@@ -58,7 +58,7 @@ const portfolioSchema = z.object({
 const portfolio = defineCollection({
   loader: file('src/cms/portfolio.json'),
   schema: ({ image }) =>
-    portfolioSchema.merge(
+    portfolioSchema.extend(
       z.object({
         image: image().optional(),
       }),
@@ -92,7 +92,7 @@ const mediaSchema = z.object({
 const media = defineCollection({
   loader: file('src/cms/media.json'),
   schema: ({ image }) =>
-    mediaSchema.merge(
+    mediaSchema.extend(
       z.object({
         image: image().optional(),
       }),
