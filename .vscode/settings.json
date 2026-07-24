@@ -32,7 +32,6 @@
     "mdx": true
   },
   "cSpell.language": "en",
-  "typescript.updateImportsOnFileMove.enabled": "always",
 
   // File Associations
   "files.associations": {
