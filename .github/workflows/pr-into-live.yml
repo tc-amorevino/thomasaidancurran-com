@@ -11,6 +11,7 @@ jobs:
   pr_checks:
     name: '[LIVE/pr] Validate Source, Version, and Run Checks'
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     # Ensure this runs only for PRs originating from the same repository to
     # prevent abuse of repository secrets.
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
@@ -20,6 +21,8 @@ jobs:
       # DEV into LIVE.
       - name: 'Enforce PR Source Branch'
         run: |
+          set -euo pipefail
+
           if [[ "${{ github.event.pull_request.head.ref }}" != "dev" ]]; then
             echo "❌ Error: Pull requests into 'live' are only allowed from the 'dev' branch."
             echo "This PR is from: ${{ github.event.pull_request.head.ref }}"
@@ -37,6 +40,8 @@ jobs:
       # target branch (live).
       - name: 'Check Version Bump'
         run: |
+          set -euo pipefail
+
           # Fetch the target branch (live) invisibly
           git fetch origin ${{ github.event.pull_request.base.ref }}
 
