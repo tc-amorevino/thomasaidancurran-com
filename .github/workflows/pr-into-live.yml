@@ -63,7 +63,11 @@ jobs:
 
       # Install both runtime dependencies and dev dependencies.
       - name: 'Install Dependencies'
-        run: npm ci
+        run: npm ci --include=dev
+
+      # Sync astro virtual modules before lint so content API types are available
+      - name: 'Sync Astro Virtual Modules'
+        run: npm run sync
 
       # Check code quality
       - name: 'Run Code Lint'
@@ -76,10 +80,6 @@ jobs:
       # Check spelling throughout the codebase
       - name: 'Run Code Spelling Check'
         run: npm run spellcheck
-
-      # Sync astro virtual modules (required for astro check to work properly)
-      - name: 'Sync Astro Virtual Modules'
-        run: npm run sync
 
       # Check for type errors via astro check
       - name: 'Run Code Type Check'

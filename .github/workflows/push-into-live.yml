@@ -41,7 +41,7 @@ jobs:
 
       # Install both runtime dependencies and dev dependencies
       - name: 'Install Dependencies'
-        run: npm ci
+        run: npm ci --include=dev
 
       # Build the runtime code (/dist folder)
       - name: 'Build Astro App'
