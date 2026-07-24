@@ -3,88 +3,89 @@ on:
   pull_request:
     branches: [live]
     types: [opened, reopened, synchronize]
-  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  check_version_bump:
-    name: 'Check Version Bump'
+  pr_checks:
+    name: '[LIVE/pr] Validate Source, Version, and Run Checks'
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # Ensure this runs only for PRs originating from the same repository to
+    # prevent abuse of repository secrets.
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
 
     steps:
-      - name: 'Checkout Code Live'
-        uses: actions/checkout@v4
-        with:
-          path: live
-          ref: ${{ github.event.pull_request.base.ref }}
-
-      - name: 'Checkout Code PR'
-        uses: actions/checkout@v4
-        with:
-          path: pr
-
-      - name: 'Install NodeJS via .nvmrc'
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: 'pr/.nvmrc'
-          cache: 'npm'
-          cache-dependency-path: 'pr/package-lock.json'
-
-      - name: 'Get the Live package.json version'
-        id: live_version
-        uses: martinbeentjes/npm-get-version-action@v1.3.1
-        with:
-          path: 'live'
-      - run: 'echo Live Version: ${{ steps.live_version.outputs.current-version }}'
-        shell: bash
-
-      - name: 'Get the PR package.json version'
-        id: pr_version
-        uses: martinbeentjes/npm-get-version-action@v1.3.1
-        with:
-          path: 'pr'
-      - run: 'echo PR Version: ${{ steps.pr_version.outputs.current-version }}'
-        shell: bash
-
-      - name: 'Fail if the PR version is not greater than the Live version'
+      # Ensure PR is from the DEV branch, as we only want to allow merges from
+      # DEV into LIVE.
+      - name: 'Enforce PR Source Branch'
         run: |
-          live_version="${{ steps.live_version.outputs.current-version }}"
-          pr_version="${{ steps.pr_version.outputs.current-version }}"
-          if [[ "${{ steps.live_version.outputs.current-version }}" == "${{ steps.pr_version.outputs.current-version }}" ]]; then
-            echo "Version has not been bumped (${{ steps.live_version.outputs.current-version }} / ${{ steps.pr_version.outputs.current-version }})"
+          set -euo pipefail
+
+          if [[ "${{ github.event.pull_request.head.ref }}" != "dev" ]]; then
+            echo "❌ Error: Pull requests into 'live' are only allowed from the 'dev' branch."
+            echo "This PR is from: ${{ github.event.pull_request.head.ref }}"
             exit 1
           fi
-        shell: bash
+          echo "✅ PR is from DEV branch. Continuing."
 
-  lint_checks:
-    name: 'Lint & Checks'
-    runs-on: ubuntu-latest
-    needs: check_version_bump
-
-    steps:
-      - name: 'Checkout Code'
-        uses: actions/checkout@v4
-
-      - name: 'Install NodeJS via .nvmrc'
-        uses: actions/setup-node@v4
+      - name: 'Checkout PR Code'
+        uses: actions/checkout@v6
         with:
-          node-version-file: '.nvmrc'
+          # Fetches history so we can compare branches
+          fetch-depth: 0
+
+      # Check if the version in package.json has been bumped compared to the
+      # target branch (live).
+      - name: 'Check Version Bump'
+        run: |
+          set -euo pipefail
+
+          # Fetch the target branch (live) invisibly
+          git fetch origin ${{ github.event.pull_request.base.ref }}
+
+          # Extract versions natively using jq and git show
+          LIVE_VERSION=$(git show origin/${{ github.event.pull_request.base.ref }}:package.json | jq -r .version)
+          PR_VERSION=$(jq -r .version package.json)
+
+          echo "LIVE Version: $LIVE_VERSION"
+          echo "PR Version: $PR_VERSION"
+
+          if [[ "$LIVE_VERSION" == "$PR_VERSION" ]]; then
+            echo "❌ Error: Version has not been bumped! Both are $LIVE_VERSION."
+            exit 1
+          fi
+          echo "✅ Version is bumped."
+
+      # Install NodeJS required for development tools and checks.
+      - name: 'Install NodeJS via package.json engines.node (currently 24)'
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: 'package.json'
           cache: 'npm'
           cache-dependency-path: './package-lock.json'
 
+      # Install both runtime dependencies and dev dependencies.
       - name: 'Install Dependencies'
-        run: npm ci
+        run: npm ci --include=dev
 
-      - name: 'Run Sync'
+      # Sync astro virtual modules before lint so content API types are available
+      - name: 'Sync Astro Virtual Modules'
         run: npm run sync
 
-      - name: 'Run Lint'
+      # Check code quality
+      - name: 'Run Code Lint'
         run: npm run lint
 
-      - name: 'Run Style Check'
+      # Check code formatting
+      - name: 'Run Code Format Check'
         run: npm run stylecheck
 
-      - name: 'Run Spellcheck'
+      # Check spelling throughout the codebase
+      - name: 'Run Code Spelling Check'
         run: npm run spellcheck
 
-      - name: 'Run Checks'
+      # Check for type errors via astro check
+      - name: 'Run Code Type Check'
         run: npm run check

@@ -1,5 +1,13 @@
 [
   {
+    "slug": "jss",
+    "title": "Japan Secure Solutions",
+    "description": "Zero-Trust, Sovereign, Digital Infrastructure for Japan's most Critical Environments",
+    "image": "./images/jss_840x840.jpg",
+    "href": "https://japansecure.solutions/",
+    "type": "advisor"
+  },
+  {
     "slug": "esmt",
     "title": "ESMT",
     "description": "Institute for Deep Tech Innovation Born to Tackle the European Deep Tech Gap",

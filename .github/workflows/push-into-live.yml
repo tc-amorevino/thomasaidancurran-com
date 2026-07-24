@@ -1,11 +1,11 @@
-name: 'Push into Live / Deployment'
+name: 'Push into Live'
 on:
   push:
     branches: [live]
   workflow_dispatch:
 
 concurrency:
-  group: deployment
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -14,30 +14,45 @@ permissions:
   id-token: write
 
 jobs:
-  build:
-    name: 'Build'
+  build_and_deploy:
+    name: '[LIVE/push] Build and Deploy to GitHub Pages'
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
-    steps:
-      - name: 'Checkout Code'
-        uses: actions/checkout@v4
-
-      - name: 'Get Required NodeJS Version via .nvmrc'
-        run: echo NVMRC=`cat .nvmrc` >> $GITHUB_ENV
-
-      - name: 'Install, build, and upload site'
-        uses: withastro/action@v3
-        with:
-          node-version: ${{ env.NVMRC }}
-
-  deploy:
-    name: 'Deploy'
-    needs: build
-    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
+      - name: 'Checkout Code'
+        uses: actions/checkout@v6
+
+      # Install Node.js required for build and deploy steps
+      - name: 'Install Node.js via package.json engines.node (currently 24)'
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: 'package.json'
+          cache: 'npm'
+          cache-dependency-path: './package-lock.json'
+
+      # Install both runtime dependencies and dev dependencies
+      - name: 'Install Dependencies'
+        run: npm ci --include=dev
+
+      # Build the runtime code (/dist folder)
+      - name: 'Build Astro App'
+        env:
+          # Scope production mode to the build step to avoid side effects in other steps.
+          NODE_ENV: production
+        run: npm run build
+
+      # Upload the built site as a GitHub Pages artifact
+      - name: 'Upload GitHub Pages Artifact'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      # Deploy the uploaded artifact to GitHub Pages
       - name: 'Deploy to GitHub Pages'
         id: deployment
         uses: actions/deploy-pages@v4
